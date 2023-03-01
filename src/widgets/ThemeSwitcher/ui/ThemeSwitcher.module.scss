@@ -1,0 +1,22 @@
+.themeSwitcher {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 200ms ease-out;
+
+  &:hover {
+    box-shadow: 0 0 12px var(--inverted-primary-color);
+  }
+}
+
+.svg {
+  width: 20px;
+  height: 20px;
+
+  &>g {
+    fill: var(--inverted-primary-color)
+  }
+}

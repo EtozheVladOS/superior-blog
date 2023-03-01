@@ -21,8 +21,8 @@ export function buildWebpackConfug(options: BuildOptions): webpack.Configuration
     module: {
       rules: buildLoaders(options),
     },
-    resolve: buildResolvers(),
+    resolve: buildResolvers(options),
     devtool: isDev ? 'inline-source-map' : undefined, // чтобы былы возможность отсалеживать ошибки в консоли разраба
     devServer: isDev ? buildDevServer(options) : undefined,
-  }
+  };
 }
