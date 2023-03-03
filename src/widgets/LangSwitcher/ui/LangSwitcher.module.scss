@@ -9,13 +9,15 @@
 
   &:hover {
     box-shadow: 0 0 12px var(--inverted-primary-color);
+    background-color: var(--inverted-transparent-primary-color) !important;
   }
 }
+
 .svg {
   width: 20px;
   height: 20px;
 
-  &>path {
-    fill: var(--inverted-primary-color)
+  & > path {
+    fill: var(--inverted-primary-color);
   }
 }

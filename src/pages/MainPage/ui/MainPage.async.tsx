@@ -1,7 +1,7 @@
-import { lazy } from "react";
+import { lazy } from 'react';
 
 // чтоб проверить как работает Suspense в App.tsx
 export const MainPageAsync = lazy(() => new Promise((resolve) => {
-  //@ts-ignore
-  setTimeout(() => resolve(import('./MainPage')), 1000)
+  // @ts-ignore
+  setTimeout(() => resolve(import('./MainPage')), 1000);
 }));
