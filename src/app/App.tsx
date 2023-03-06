@@ -2,7 +2,7 @@ import './styles/index.scss';
 import { Suspense } from 'react';
 import { AppRouter } from '@/app/providers/router';
 import { useTheme } from '@/app/providers/ThemeProvider';
-import { classNames } from '@/shared/lib/className';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Navbar } from '@/widgets/NavBar';
 import { Sidebar } from '@/widgets/Sidebar';
 
@@ -19,6 +19,5 @@ export const App = () => {
         </div>
       </Suspense>
     </div>
-  )
-}
-
+  );
+};

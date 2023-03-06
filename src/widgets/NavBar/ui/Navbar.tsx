@@ -1,5 +1,5 @@
 import styles from './Navbar.module.scss';
-import { classNames } from "@/shared/lib/className";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { AppLink } from '@/shared/ui/AppLink';
 import { APP_LINK_THEME } from '@/shared/ui/AppLink/ui/AppLink';
 
