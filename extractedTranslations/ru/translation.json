@@ -4,5 +4,10 @@
   },
   "main": {
     "page": "page"
+  },
+  "page": {
+    "not": {
+      "found": "found"
+    }
   }
 }
