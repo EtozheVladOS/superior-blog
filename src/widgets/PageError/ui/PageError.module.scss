@@ -1,0 +1,11 @@
+.pageError {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20vh;
+
+  & :not(:last-child) {
+    margin-bottom: 12px;
+  }
+}

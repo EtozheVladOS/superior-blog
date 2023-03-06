@@ -1,4 +1,14 @@
 {
+  "Something": {
+    "went": {
+      "wrong": "wrong"
+    }
+  },
+  "Something went": {
+    "wrong": "wrong"
+  },
+  "Something went wrong": "Something went wrong",
+  "Something wentwrong": "Something wentwrong",
   "about": {
     "page": "page"
   },
@@ -9,5 +19,16 @@
     "not": {
       "found": "found"
     }
+  },
+  "reload": {
+    "page": "page"
+  },
+  "something": {
+    "went": {
+      "wrong": "wrong"
+    }
+  },
+  "throw": {
+    "error": "error"
   }
 }
