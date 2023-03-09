@@ -1,7 +1,7 @@
 import styles from './ThemeSwitcher.module.scss';
 import { useTheme } from '@/app/providers/ThemeProvider';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import ThemeIcon from '@/shared/assets/icons/theme-mode.svg'
+import ThemeIcon from '@/shared/assets/icons/theme-mode.svg';
 import { Button, THEME_BTN } from '@/shared/ui/Button/ui/Button';
 
 interface ThemeSwitcherProps {
