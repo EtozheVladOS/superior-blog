@@ -4,6 +4,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 
 export enum THEME_BTN {
   CLEAR = 'clear',
+  OUTLINE = 'outline',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -20,9 +21,10 @@ export const Button: FC<ButtonProps> = ({
   <button
     type="button"
     className={classNames(
-      '',
+      styles.button,
       {
         [styles.clear]: theme === THEME_BTN.CLEAR,
+        [styles.outline]: theme === THEME_BTN.OUTLINE,
       },
       [className],
     )}

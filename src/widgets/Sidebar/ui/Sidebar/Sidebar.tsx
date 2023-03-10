@@ -25,12 +25,12 @@ export const Sidebar = ({ className }: SidebarProps) => {
       }
     >
       <div className={styles.menuItems}>
-        <button 
-        data-testid="toggle-sidebar"
-         onClick={onToggleCollapsed}
-         >
+        <button
+          data-testid="toggle-sidebar"
+          onClick={onToggleCollapsed}
+        >
           toggle
-          </button>
+        </button>
       </div>
       <div className={styles.switchers}>
         <ThemeSwitcher />
