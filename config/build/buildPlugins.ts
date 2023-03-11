@@ -21,7 +21,7 @@ export function buildPlugins({
     new webpack.DefinePlugin({
       __IS_DEV__: isDev,
     }),
-    new BundleAnalyzerPlugin({
+    new BundleAnalyzerPlugin({ // analize bundle size
       openAnalyzer: false,
     }),
   ];
