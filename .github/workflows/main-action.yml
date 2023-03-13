@@ -11,6 +11,20 @@ jobs:
       matrix:
         node-version: [ 17.x ]
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - uses: actions/checkout@v3
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{matrix.node-version}}
+      - name: Initial node modules
+        run: npm i
+      - name: Biuld production bundle
+        run: npm run build:prod
+      - name: Lint ts
+        run: npm run lint:ts
+      - name: Lint css
+        run: npm run lint:css
+      - name: Test unit
+        run: npm run test:unit
 
      
