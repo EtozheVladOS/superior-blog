@@ -1,4 +1,4 @@
-name: Build lint test
+name: Build/lint/test
 on:
   push:
     branches: [master]
@@ -26,5 +26,8 @@ jobs:
         run: npm run lint:css
       - name: Test unit
         run: npm run test:unit
-
+      - name: Build storybook
+        run: npm run storybook:build
+      - name: Test screenshot
+        run: npm run test:ui:ci
      
