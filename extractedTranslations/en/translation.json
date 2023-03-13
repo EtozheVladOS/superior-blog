@@ -28,6 +28,9 @@
       "wrong": "wrong"
     }
   },
+  "test": {
+    "btn": ""
+  },
   "throw": {
     "error": "error"
   }
