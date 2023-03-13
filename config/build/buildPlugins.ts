@@ -21,15 +21,15 @@ export function buildPlugins({
     new webpack.DefinePlugin({
       __IS_DEV__: isDev,
     }),
-    new BundleAnalyzerPlugin({ // analize bundle size
-      openAnalyzer: false,
-    }),
   ];
 
   if (isDev) {
     plugins.push(
       new ReactRefreshWebpackPlugin(),
       new webpack.HotModuleReplacementPlugin(),
+      new BundleAnalyzerPlugin({ // analize bundle size
+        openAnalyzer: false,
+      }),
     );
   }
 

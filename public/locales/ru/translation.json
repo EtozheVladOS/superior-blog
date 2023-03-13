@@ -3,5 +3,6 @@
   "page.not.found": "Страница не найдена",
   "something.went.wrong": "Что-то пошло не так",
   "reload.page": "Обновить страницу",
-  "throw.error": "Throw error"
+  "throw.error": "Throw error",
+  "test.btn": "Btn"
 }
