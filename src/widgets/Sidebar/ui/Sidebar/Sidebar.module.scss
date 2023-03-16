@@ -10,8 +10,37 @@
   width: var(--sidebar-collapsed-width);
 }
 
-.menuItems {
-  padding: 8px;
+.linksItemList {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 16px;
+
+  & .collapsed {
+    justify-content: space-around;
+  }
+}
+
+.linkItem {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+
+  & > svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    fill: var(--inverted-primary-color);
+  }
+
+  &.collapsed {
+    & span {
+      visibility: hidden;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+  }
 }
 
 .switchers {
@@ -19,9 +48,45 @@
   position: absolute;
   bottom: 20px;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
-  & :not(:last-child) {
+  & div {
+    display: flex;
+  }
+
+  & > div :not(:last-child) {
     margin-right: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+.arrowIcon {
+  display: flex;
+  align-items: center;
+  color: var(--inverted-primary-color);
+  border-radius: 8px;
+
+  & > svg {
+    transition: transform 400ms;
+    width: 20px;
+    height: 20px;
+    fill: var(--inverted-primary-color);
+    transform: rotate(180deg);
+    margin-right: 8px;
+  }
+
+  &.collapsedIcon {
+    & span {
+      transition: all 200ms;
+      visibility: hidden;
+      opacity: 0;
+      width: 0;
+    }
+
+    & svg {
+      margin-right: 0;
+      transform: none;
+    }
   }
 }

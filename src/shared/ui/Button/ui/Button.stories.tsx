@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Button, THEME_BTN } from './Button';
+import { Button, THEME_BTN, SIZE_BTN } from './Button';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { THEMES } from '@/app/providers/ThemeProvider/lib/ThemesContext';
 
@@ -9,6 +9,20 @@ export default {
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+
+const SizesTemplate: ComponentStory<typeof Button> = () => (
+  <div>
+    <Button size={SIZE_BTN.SMALL}>Small</Button>
+    <Button>Mediun</Button>
+    <Button size={SIZE_BTN.LARGE}>Large</Button>
+    <Button size={SIZE_BTN.EXTRA_LARGE}>Extra Large</Button>
+  </div>
+);
+
+export const SizesLight = SizesTemplate.bind({});
+
+export const SizesDark = SizesTemplate.bind({});
+SizesDark.decorators = [ThemeDecorator(THEMES.DARK)];
 
 export const Default = Template.bind({});
 Default.args = {

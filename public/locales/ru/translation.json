@@ -4,5 +4,6 @@
   "something.went.wrong": "Что-то пошло не так",
   "reload.page": "Обновить страницу",
   "throw.error": "Throw error",
-  "test.btn": "Btn"
+  "test.btn": "Btn",
+  "collapse": "Свернуть"
 }
