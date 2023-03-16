@@ -21,13 +21,18 @@ jobs:
       - name: Biuld production bundle
         run: npm run build:prod
       - name: Lint ts
+        if: always()
         run: npm run lint:ts
       - name: Lint css
+        if: always()
         run: npm run lint:css
       - name: Test unit
+        if: always()
         run: npm run test:unit
       - name: Build storybook
+        if: always()
         run: npm run storybook:build
       - name: Test screenshot
+        if: always()
         run: npm run test:ui:ci
      
