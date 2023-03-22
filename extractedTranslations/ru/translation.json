@@ -1,4 +1,5 @@
 {
+  "": "",
   "Something": {
     "went": {
       "wrong": "wrong"
@@ -13,6 +14,8 @@
     "page": "page"
   },
   "collapse": "collapse",
+  "lo": "lo",
+  "login": "login",
   "main": {
     "page": "page"
   },

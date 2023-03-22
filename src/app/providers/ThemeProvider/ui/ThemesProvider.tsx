@@ -8,13 +8,23 @@ import {
 const initStateTheme = localStorage.getItem(LOCAL_STORAGE_THEMES_KEY) as THEMES
 || THEMES.DARK;
 
-const ThemesProvider: FC = ({ children }) => {
-  const [theme, setTheme] = useState<THEMES>(initStateTheme);
+interface ThemesProviderProps {
+  initialTheme?: THEMES;
+}
 
-  const themeValue = useMemo(() => ({
-    theme,
-    setTheme,
-  }), [theme]);
+const ThemesProvider: FC<ThemesProviderProps> = ({
+  children,
+  initialTheme,
+}) => {
+  const [theme, setTheme] = useState<THEMES>(initialTheme || initStateTheme);
+
+  const themeValue = useMemo(() => {
+    document.body.className = `app ${theme}`;
+    return {
+      theme,
+      setTheme,
+    };
+  }, [theme]);
 
   return (
     <ThemesContext.Provider value={themeValue}>

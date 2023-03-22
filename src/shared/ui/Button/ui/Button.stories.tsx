@@ -46,6 +46,18 @@ ClearDark.args = {
 };
 ClearDark.decorators = [ThemeDecorator(THEMES.DARK)];
 
+export const ClearInvertder = Template.bind({});
+ClearInvertder.args = {
+  children: 'ClearInvertder',
+  theme: THEME_BTN.CLEAR_INVERTED,
+};
+export const ClearInvertderDark = Template.bind({});
+ClearInvertderDark.args = {
+  children: 'ClearInvertder',
+  theme: THEME_BTN.CLEAR_INVERTED,
+};
+ClearInvertderDark.decorators = [ThemeDecorator(THEMES.DARK)];
+
 export const Outline = Template.bind({});
 Outline.args = {
   children: 'Outline',

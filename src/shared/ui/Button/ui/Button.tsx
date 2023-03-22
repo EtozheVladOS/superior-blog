@@ -4,6 +4,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 
 export enum THEME_BTN {
   CLEAR = 'clear',
+  CLEAR_INVERTED = 'clearInverted',
   OUTLINE = 'outline',
 }
 
@@ -29,6 +30,7 @@ export const Button: FC<ButtonProps> = ({
 }) => {
   const classes = {
     [styles.clear]: theme === THEME_BTN.CLEAR,
+    [styles.clearInverted]: theme === THEME_BTN.CLEAR_INVERTED,
     [styles.outline]: theme === THEME_BTN.OUTLINE,
     [styles.size_s]: size === SIZE_BTN.SMALL,
     [styles.size_m]: size === SIZE_BTN.MEDIUM,

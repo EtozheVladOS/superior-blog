@@ -18,6 +18,5 @@ export const useTheme = (): UseThemeRes => {
     localStorage.setItem(LOCAL_STORAGE_THEMES_KEY, themeToSet);
     setTheme(themeToSet);
   };
-
   return { theme, toggleTheme };
 };
