@@ -5,14 +5,17 @@ import { BrowserRouter } from 'react-router-dom';
 import { App } from '@/app/App';
 import { ThemesProvider } from '@/app/providers/ThemeProvider';
 import { ErrorBoundary } from '@/app/providers/ErrorBoundary';
+import { StoreProvider } from '@/app/providers/StoreProvider';
 
 render(
-  <ThemesProvider>
-    <BrowserRouter>
-      <ErrorBoundary>
-        <App />
-      </ErrorBoundary>
-    </BrowserRouter>
-  </ThemesProvider>,
+  <StoreProvider>
+    <ThemesProvider>
+      <BrowserRouter>
+        <ErrorBoundary>
+          <App />
+        </ErrorBoundary>
+      </BrowserRouter>
+    </ThemesProvider>
+  </StoreProvider>,
   document.getElementById('root'),
 );
