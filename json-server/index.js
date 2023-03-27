@@ -51,7 +51,7 @@ server.use((req, res, next) => {
 
   next();
 });
-console.log();
+
 server.use(router);
 
 // run server
