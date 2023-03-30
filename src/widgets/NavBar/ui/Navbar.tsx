@@ -2,8 +2,8 @@ import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from './Navbar.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Modal } from '@/shared/ui/Modal';
 import { Button, THEME_BTN } from '@/shared/ui/Button/ui/Button';
+import { LoginModal } from '@/features/AuthByUsername';
 
 interface NavbarProps {
   className?: string;
@@ -26,9 +26,7 @@ export const Navbar = ({ className }: NavbarProps) => {
       >
         {t('login')}
       </Button>
-      <Modal visible={authModalVisible} onClose={toggleModalVisibility}>
-        {t('login')}
-      </Modal>
+      <LoginModal visible={authModalVisible} onClose={toggleModalVisibility} />
     </div>
   );
 };

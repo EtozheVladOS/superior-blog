@@ -24,6 +24,7 @@
       "found": "found"
     }
   },
+  "password": "password",
   "reload": {
     "page": "page"
   },
@@ -37,5 +38,6 @@
   },
   "throw": {
     "error": "error"
-  }
+  },
+  "username": "username"
 }

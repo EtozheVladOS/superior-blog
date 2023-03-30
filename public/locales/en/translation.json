@@ -6,6 +6,8 @@
   "throw.error": "Throw error",
   "test.btn": "Btn",
   "collapse": "Collapse",
-  "login": "Login"
+  "login": "Login",
+  "username": "Username",
+  "password": "Password"
 }
 

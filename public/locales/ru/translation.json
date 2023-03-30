@@ -6,5 +6,7 @@
   "throw.error": "Throw error",
   "test.btn": "Btn",
   "collapse": "Свернуть",
-  "login": "Войти"
+  "login": "Войти",
+  "username": "Имя польщователя",
+  "password": "Пароль"
 }

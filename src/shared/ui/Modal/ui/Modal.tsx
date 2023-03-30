@@ -16,6 +16,7 @@ interface ModalProps {
   className?: string;
   visible?: boolean;
   onClose?: () => void;
+  lazy?: boolean;
 }
 
 export const Modal: FC<ModalProps> = ({
@@ -23,7 +24,9 @@ export const Modal: FC<ModalProps> = ({
   className,
   visible,
   onClose,
+  lazy,
 }) => {
+  const [isMounted, setIsMounted] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>(null);
 
@@ -33,6 +36,7 @@ export const Modal: FC<ModalProps> = ({
       timerRef.current = setTimeout(() => {
         onClose();
         setIsClosing(false);
+        setIsMounted(false);
       }, CLOSING_DELAY);
     }
   }, [onClose]);
@@ -53,6 +57,12 @@ export const Modal: FC<ModalProps> = ({
     };
   }, [visible, onKeyDown]);
 
+  useEffect(() => {
+    if (visible) {
+      setIsMounted(true);
+    }
+  }, [visible]);
+
   const onContentClick = (e: MouseEvent) => {
     e.stopPropagation();
   };
@@ -61,6 +71,10 @@ export const Modal: FC<ModalProps> = ({
     [styles.opened]: visible,
     [styles.isClosing]: isClosing,
   };
+
+  if (lazy && !isMounted) {
+    return null;
+  }
 
   return (
     <Portal>
