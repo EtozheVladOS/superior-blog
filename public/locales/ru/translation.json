@@ -7,6 +7,9 @@
   "test.btn": "Btn",
   "collapse": "Свернуть",
   "login": "Войти",
+  "logout": "Выйти",
   "username": "Имя польщователя",
-  "password": "Пароль"
+  "password": "Пароль",
+  "auth.form.title": "Форма авторизации",
+  "wrong.auth.data": "Вы ввели неверный логин или пароль"
 }

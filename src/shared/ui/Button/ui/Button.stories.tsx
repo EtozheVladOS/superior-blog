@@ -34,6 +34,18 @@ DefaultDark.args = {
 };
 DefaultDark.decorators = [ThemeDecorator(THEMES.DARK)];
 
+export const Disabled = Template.bind({});
+Disabled.args = {
+  children: 'Disabled',
+  disabled: true,
+};
+export const DisabledDark = Template.bind({});
+DisabledDark.args = {
+  children: 'Disabled',
+  disabled: true,
+};
+DisabledDark.decorators = [ThemeDecorator(THEMES.DARK)];
+
 export const Clear = Template.bind({});
 Clear.args = {
   children: 'Clear',

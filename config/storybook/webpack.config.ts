@@ -1,9 +1,9 @@
 import { BuildPaths } from 'config/build/types/config';
 import path from 'path';
-import { Configuration as wbConfiguration, RuleSetRule } from 'webpack';
+import { Configuration as wbConfiguration, RuleSetRule, DefinePlugin } from 'webpack';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 
-export default function ({ config }: {config: wbConfiguration}) {
+export default function ({ config }: { config: wbConfiguration }) {
   const paths: BuildPaths = {
     entry: '',
     build: '',
@@ -32,6 +32,10 @@ export default function ({ config }: {config: wbConfiguration}) {
     use: ['@svgr/webpack'],
   });
   config.module.rules.push(buildCssLoader(true));
+
+  config.plugins.push(new DefinePlugin({
+    __IS_DEV__: true,
+  }));
 
   return config;
 }

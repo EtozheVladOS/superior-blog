@@ -13,9 +13,17 @@
   "about": {
     "page": "page"
   },
+  "auth": {
+    "form": {
+      "title": "title"
+    }
+  },
+  "auth_form_title": "",
   "collapse": "collapse",
+  "error": "",
   "lo": "lo",
   "login": "login",
+  "logout": "logout",
   "main": {
     "page": "page"
   },
@@ -39,5 +47,10 @@
   "throw": {
     "error": "error"
   },
-  "username": "username"
+  "username": "username",
+  "wrong": {
+    "auth": {
+      "data": ""
+    }
+  }
 }
