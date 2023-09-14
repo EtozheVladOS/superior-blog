@@ -16,6 +16,7 @@ interface ConsoleInputProps extends HTMLInputProps {
   placeholderClassname?: string;
   inputClassname?: string;
   value?: string;
+  disabled?: boolean;
   onChange?: (value: string) => void;
   autoFocus?: boolean;
 }
@@ -25,6 +26,7 @@ export const ConsoleInput = memo(({
   placeholderClassname,
   inputClassname,
   value,
+  disabled,
   onChange,
   type = 'text',
   placeholder,
@@ -36,7 +38,7 @@ export const ConsoleInput = memo(({
   const [caretPosition, setCaretPosition] = useState(0);
 
   useEffect(() => {
-    if (autoFocus) {
+    if (autoFocus && !disabled) {
       setIsFocused(true);
       inputRef?.current?.focus();
     }
@@ -53,19 +55,27 @@ export const ConsoleInput = memo(({
   };
 
   const hangleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value = '' } = e.target;
-    onChange?.(value);
-    setCaretPosition(value.length);
+    if (!disabled) {
+      const { value = '' } = e.target;
+      onChange?.(value);
+      setCaretPosition(value.length);
+    }
   };
 
   return (
-    <div className={classNames(styles.inputWrapper, {}, [wrapperClassName])}>
+    <div
+      className={classNames(
+        styles.inputWrapper,
+        { [styles.disabled]: disabled },
+        [wrapperClassName],
+      )}
+    >
       {placeholder && (
-      <div
-        className={classNames(styles.plcaeholder, {}, [placeholderClassname])}
-      >
-        {placeholder}
-      </div>
+        <div
+          className={classNames(styles.plcaeholder, {}, [placeholderClassname])}
+        >
+          {placeholder}
+        </div>
       )}
       <div className={styles.caretWrapper}>
         <input
@@ -80,10 +90,10 @@ export const ConsoleInput = memo(({
           {...otherProps}
         />
         {isFocused && (
-        <span
-          className={styles.caret}
-          style={{ left: `${caretPosition * 10}px` }}
-        />
+          <span
+            className={styles.caret}
+            style={{ left: `${caretPosition * 10}px` }}
+          />
         )}
       </div>
     </div>

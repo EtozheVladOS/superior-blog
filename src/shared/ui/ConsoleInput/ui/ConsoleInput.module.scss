@@ -34,6 +34,11 @@
   animation: blink 1s forwards infinite;
 }
 
+.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
 @keyframes blink {
   0% {
     opacity: 0;

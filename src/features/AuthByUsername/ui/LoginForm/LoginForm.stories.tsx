@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { THEMES } from '@/app/providers/ThemeProvider/lib/ThemesContext';
-import { LoginForm } from './LoginForm';
+import LoginForm from './LoginForm';
 
 export default {
   title: 'Features/LoginForm',
@@ -13,6 +13,8 @@ const Template: ComponentStory<typeof LoginForm> = () => <LoginForm />;
 
 export const LoginFormLight = Template.bind({});
 export const LoginFormDark = Template.bind({});
+export const LoginFormWithError = Template.bind({});
+export const LoginFormisLoading = Template.bind({});
 
 const loginStoreDecorator = StoreDecorator(
   {
@@ -23,3 +25,19 @@ const loginStoreDecorator = StoreDecorator(
 
 LoginFormLight.decorators = [loginStoreDecorator];
 LoginFormDark.decorators = [ThemeDecorator(THEMES.DARK), loginStoreDecorator];
+LoginFormWithError.decorators = [
+  StoreDecorator(
+    {
+      loginForm:
+        { error: 'error example' },
+    },
+  ),
+];
+LoginFormisLoading.decorators = [
+  StoreDecorator(
+    {
+      loginForm:
+        { isLoading: true },
+    },
+  ),
+];

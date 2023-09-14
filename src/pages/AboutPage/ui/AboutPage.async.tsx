@@ -1,6 +1,5 @@
-import { lazy } from 'react';
+import { FC, lazy } from 'react';
 
-export const AboutPageAsync = lazy(() => new Promise((resolve) => {
-  // @ts-ignore
+export const AboutPageAsync = lazy<FC>(() => new Promise((resolve) => {
   setTimeout(() => resolve(import('./AboutPage')), 1000);
 }));
