@@ -1,0 +1,28 @@
+.linkItem {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+
+  & > svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    fill: var(--inverted-primary-color);
+  }
+
+  &.collapsed {
+    justify-content: center;
+
+    & svg {
+      margin: 0;
+    }
+
+    & span {
+      visibility: hidden;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+  }
+}

@@ -33,6 +33,9 @@
     }
   },
   "password": "password",
+  "profile": {
+    "page": "page"
+  },
   "reload": {
     "page": "page"
   },

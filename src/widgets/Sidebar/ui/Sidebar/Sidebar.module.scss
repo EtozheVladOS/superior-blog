@@ -20,29 +20,6 @@
   }
 }
 
-.linkItem {
-  height: 24px;
-  display: flex;
-  align-items: center;
-  margin-top: 8px;
-
-  & > svg {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-    fill: var(--inverted-primary-color);
-  }
-
-  &.collapsed {
-    & span {
-      visibility: hidden;
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-  }
-}
-
 .switchers {
   width: 100%;
   position: absolute;

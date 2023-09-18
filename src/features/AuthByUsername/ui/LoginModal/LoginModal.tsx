@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { Modal } from '@/shared/ui/Modal';
 import { Spinner } from '@/shared/ui/Spinner';
-import { LoginFormAsync } from '../LoginForm/LoginForm.async';
+import { LoginFormAsync as LoginForm } from '../LoginForm/LoginForm.async';
 
 interface LoginModalProps {
   visible: boolean;
@@ -15,7 +15,7 @@ export const LoginModal = ({ visible, onClose }: LoginModalProps) => (
     lazy
   >
     <Suspense fallback={<Spinner />}>
-      <LoginFormAsync />
+      <LoginForm onSuccess={onClose} />
     </Suspense>
   </Modal>
 );

@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { DynamicReducerLoader, ReducersList } from '@/shared/lib/components/DynamicReducerLoader';
 import { Button } from '@/shared/ui/Button/ui/Button';
 import { ConsoleInput } from '@/shared/ui/ConsoleInput';
@@ -13,12 +14,13 @@ import { loginByUsername } from '../../model/services/loginByUsername/loginByUse
 
 export interface LoginFormProps {
   className?: string;
+  onSuccess: () => void;
 }
 
 const initialRedusers: ReducersList = { loginForm: loginReducer };
 
-const LoginForm = memo(({ className }: LoginFormProps) => {
-  const dispatch = useDispatch();
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
+  const dispatch = useAppDispatch();
   const { t } = useTranslation();
   const {
     username, password, isLoading, error,
@@ -31,9 +33,13 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
     dispatch(loginActions.setPassword(password));
   }, [dispatch]);
 
-  const onLoginBtnClick = useCallback(() => {
-    dispatch(loginByUsername({ username, password }));
-  }, [dispatch, username, password]);
+  const onLoginBtnClick = useCallback(async () => {
+    const result = await dispatch(loginByUsername({ username, password }));
+
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess();
+    }
+  }, [dispatch, username, password, onSuccess]);
 
   const getPlaceholderText = (text: string) => `${text}>`;
 

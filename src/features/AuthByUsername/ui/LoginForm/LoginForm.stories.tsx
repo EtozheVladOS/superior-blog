@@ -9,7 +9,7 @@ export default {
   component: LoginForm,
 } as ComponentMeta<typeof LoginForm>;
 
-const Template: ComponentStory<typeof LoginForm> = () => <LoginForm />;
+const Template: ComponentStory<typeof LoginForm> = () => <LoginForm onSuccess={() => undefined} />;
 
 export const LoginFormLight = Template.bind({});
 export const LoginFormDark = Template.bind({});
