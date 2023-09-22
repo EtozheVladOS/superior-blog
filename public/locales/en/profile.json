@@ -1,3 +1,6 @@
 {
-  "profile.page": "Profile"
+  "profile.page": "Profile",
+  "input.firstname": "Firstname",
+  "input.lastname": "Lastname",
+  "edit": "Edit"
 }

@@ -1,3 +1,6 @@
 {
-  "profile.page": "Профиль"
+  "profile.page": "Профиль",
+  "input.firstname": "Имя",
+  "input.lastname": "Фамилия",
+  "edit": "Редактировать"
 }

@@ -5,17 +5,22 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import ProfilePage from './ProfilePage';
 
 export default {
-  title: 'Pages/ProfilePage',
+  title: 'Pages/PageUser',
   component: ProfilePage,
 } as ComponentMeta<typeof ProfilePage>;
 
-const Template: ComponentStory<typeof ProfilePage> = (args: any) => (
-  <ProfilePage
-    {...args}
-  />
-);
+const Template: ComponentStory<typeof ProfilePage> = () => <ProfilePage />;
 
-const profileStoreDecorator = StoreDecorator({});
+const profileStoreDecorator = StoreDecorator(
+  {
+    profile: {
+      data: {
+        firstname: '',
+        lastname: '',
+      },
+    },
+  },
+);
 
 export const Light = Template.bind({});
 Light.decorators = [profileStoreDecorator];

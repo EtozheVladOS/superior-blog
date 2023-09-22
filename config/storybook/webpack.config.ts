@@ -3,7 +3,7 @@ import path from 'path';
 import { Configuration as wbConfiguration, RuleSetRule, DefinePlugin } from 'webpack';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 
-export default function ({ config }: { config: wbConfiguration }) {
+export default function ({ config }: { config: Required<wbConfiguration> }) {
   const paths: BuildPaths = {
     entry: '',
     build: '',
@@ -11,15 +11,15 @@ export default function ({ config }: { config: wbConfiguration }) {
     src: path.resolve(__dirname, '..', '..', 'src'),
   };
 
-  config.resolve.modules.push(paths.src);
-  // eslint-disable-next-line no-param-reassign
+  config.resolve.modules?.push(paths.src);
   config.resolve.alias = {
     ...config.resolve.alias,
     '@': paths.src,
   };
-  config.resolve.extensions.push('.tsx', '.ts');
+  config.resolve.extensions?.push('.tsx', '.ts');
 
   // eslint-disable-next-line no-param-reassign
+  // @ts-ignore
   config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
     if (/svg/.test(rule.test as string)) {
       return { ...rule, exclude: /\.svg$/i };
@@ -27,14 +27,15 @@ export default function ({ config }: { config: wbConfiguration }) {
     return rule;
   });
 
-  config.module.rules.push({
+  config.module.rules?.push({
     test: /\.svg$/,
     use: ['@svgr/webpack'],
   });
-  config.module.rules.push(buildCssLoader(true));
+  config.module.rules?.push(buildCssLoader(true));
 
   config.plugins.push(new DefinePlugin({
-    __IS_DEV__: true,
+    __IS_DEV__: JSON.stringify(true),
+    __API__: JSON.stringify(''),
   }));
 
   return config;

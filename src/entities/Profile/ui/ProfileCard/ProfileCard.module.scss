@@ -1,0 +1,14 @@
+.profileCard {
+  padding: 20px;
+  border: 2px solid var(--inverted-bg-color);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.input:not(:last-child) {
+  margin-bottom: 12px;
+}

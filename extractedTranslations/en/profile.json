@@ -1,5 +1,12 @@
 {
+  "edit": "",
+  "input": {
+    "firstname": "",
+    "lastname": ""
+  },
   "profile": {
+    "firstname": "",
+    "lastname": "",
     "page": ""
   }
 }

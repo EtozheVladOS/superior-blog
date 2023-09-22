@@ -20,13 +20,23 @@
   },
   "auth_form_title": "",
   "collapse": "collapse",
+  "edit": "edit",
   "error": "",
+  "firstname": "firstname",
+  "input": {
+    "firstname": "firstname",
+    "lastname": "lastname"
+  },
+  "lastname": {
+    "input": "input"
+  },
   "lo": "lo",
   "login": "login",
   "logout": "logout",
   "main": {
     "page": "page"
   },
+  "name": "name",
   "page": {
     "not": {
       "found": "found"
@@ -34,7 +44,17 @@
   },
   "password": "password",
   "profile": {
+    "firstname": {
+      "input": "input"
+    },
+    "header": "header",
+    "lastname": {
+      "input": "input"
+    },
     "page": "page"
+  },
+  "prolastname": {
+    "input": "input"
   },
   "reload": {
     "page": "page"

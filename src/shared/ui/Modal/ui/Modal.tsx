@@ -1,13 +1,14 @@
 import {
   FC,
   MouseEvent,
+  MutableRefObject,
   useCallback,
   useEffect,
   useRef,
   useState,
 } from 'react';
 import styles from './Modal.module.scss';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { ClassnamesMods, classNames } from '@/shared/lib/classNames/classNames';
 import { Portal } from '@/shared/ui/Portal/Portal';
 
 const CLOSING_DELAY = 150;
@@ -28,7 +29,7 @@ export const Modal: FC<ModalProps> = ({
 }) => {
   const [isMounted, setIsMounted] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
-  const timerRef = useRef<ReturnType<typeof setTimeout>>(null);
+  const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
 
   const handleOnClose = useCallback(() => {
     if (onClose) {
@@ -67,7 +68,7 @@ export const Modal: FC<ModalProps> = ({
     e.stopPropagation();
   };
 
-  const classes: Record<string, boolean> = {
+  const classes: ClassnamesMods = {
     [styles.opened]: visible,
     [styles.isClosing]: isClosing,
   };

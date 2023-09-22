@@ -1,17 +1,22 @@
-import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
 import { DynamicReducerLoader, ReducersList } from '@/shared/lib/components/DynamicReducerLoader';
-import { profileReducer } from '@/entities/Profile/ui';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { fetchProfileData, profileReducer } from '@/entities/Profile';
 
 const reducers: ReducersList = {
   profile: profileReducer,
 };
 
 const ProfilePage = () => {
-  const { t } = useTranslation('profile');
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchProfileData());
+  }, [dispatch]);
 
   return (
     <DynamicReducerLoader reducersList={reducers} removeAfterUnmount>
-      <div>{t('profile.page')}</div>
+      <ProfilePage />
     </DynamicReducerLoader>
   );
 };
