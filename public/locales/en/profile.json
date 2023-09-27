@@ -2,5 +2,13 @@
   "profile.page": "Profile",
   "input.firstname": "Firstname",
   "input.lastname": "Lastname",
-  "edit": "Edit"
+  "input.age": "Age",
+  "input.country": "Country",
+  "input.city": "City",
+  "input.currency": "Currency",
+  "edit": "Edit",
+  "save": "Save",
+  "cancel": "Cancel",
+  "failFetch": "There was an error loading profile",
+  "tryToRefetch": "Try to refresh the page"
 }

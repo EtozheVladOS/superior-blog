@@ -87,6 +87,7 @@ export const ConsoleInput = memo(({
           onBlur={onBlur}
           onSelect={onSelect}
           type={type}
+          readOnly={disabled}
           {...otherProps}
         />
         {isFocused && (

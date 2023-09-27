@@ -19,11 +19,18 @@
     }
   },
   "auth_form_title": "auth_form_title",
+  "cancel": "cancel",
   "collapse": "collapse",
   "edit": "edit",
   "error": "error",
+  "fail": "fail",
+  "failFetch": "failFetch",
   "firstname": "firstname",
   "input": {
+    "age": "age",
+    "city": "city",
+    "country": "country",
+    "currency": "currency",
     "firstname": "firstname",
     "lastname": "lastname"
   },
@@ -31,6 +38,8 @@
     "input": "input"
   },
   "lo": "lo",
+  "loading": "loading",
+  "loadingssss": "loadingssss",
   "login": "login",
   "logout": "logout",
   "main": {
@@ -59,6 +68,7 @@
   "reload": {
     "page": "page"
   },
+  "save": "save",
   "something": {
     "went": {
       "wrong": "wrong"
@@ -70,6 +80,7 @@
   "throw": {
     "error": "error"
   },
+  "tryToRefetch": "tryToRefetch",
   "username": "username",
   "wrong": {
     "auth": {

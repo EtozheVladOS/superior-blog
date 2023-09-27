@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.btnGroup :not(:last-child) {
+  margin-right: 12px;
+}

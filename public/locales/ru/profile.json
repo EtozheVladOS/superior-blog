@@ -2,5 +2,13 @@
   "profile.page": "Профиль",
   "input.firstname": "Имя",
   "input.lastname": "Фамилия",
-  "edit": "Редактировать"
+  "input.age": "Возраст",
+  "input.country": "Страна",
+  "input.city": "Город",
+  "input.currency": "Валюта",
+  "edit": "Редактировать",
+  "save": "Сохранить",
+  "cancel": "Отменить",
+  "failFetch": "Произошла ошибка при закгрзке профиля",
+  "tryToRefetch": "Попробуйте обновить страницу"
 }

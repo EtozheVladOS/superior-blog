@@ -6,6 +6,7 @@ export enum THEME_BTN {
   CLEAR = 'clear',
   CLEAR_INVERTED = 'clearInverted',
   OUTLINE = 'outline',
+  OUTLINE_WARN = 'outlineWarn',
 }
 
 export enum SIZE_BTN {
@@ -34,6 +35,7 @@ export const Button: FC<ButtonProps> = ({
     [styles.clear]: theme === THEME_BTN.CLEAR,
     [styles.clearInverted]: theme === THEME_BTN.CLEAR_INVERTED,
     [styles.outline]: theme === THEME_BTN.OUTLINE,
+    [styles.outlineWarn]: theme === THEME_BTN.OUTLINE_WARN,
     [styles.size_s]: size === SIZE_BTN.SMALL,
     [styles.size_m]: size === SIZE_BTN.MEDIUM,
     [styles.size_l]: size === SIZE_BTN.LARGE,

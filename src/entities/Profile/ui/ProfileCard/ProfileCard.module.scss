@@ -1,12 +1,15 @@
 .profileCard {
   padding: 20px;
   border: 2px solid var(--inverted-bg-color);
+  border-radius: 8px;
 }
 
-.header {
+.loading,
+.error {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
 }
 
 .input:not(:last-child) {
