@@ -2,6 +2,8 @@ import { useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { DynamicReducerLoader, ReducersList } from '@/shared/lib/components/DynamicReducerLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { CURRENCY } from '@/entities/Currency';
+import { COUNTRY } from '@/entities/Country';
 import {
   ProfileCard,
   fetchProfileData,
@@ -32,6 +34,9 @@ const ProfilePage = () => {
     dispatch(fetchProfileData());
   }, [dispatch]);
 
+  const onChangeUsername = useCallback((username: string = '') => {
+    dispatch(profileActions.updateProfile({ username }));
+  }, [dispatch]);
   const onChangeFirstname = useCallback((firstname: string = '') => {
     dispatch(profileActions.updateProfile({ firstname }));
   }, [dispatch]);
@@ -46,15 +51,18 @@ const ProfilePage = () => {
       dispatch(profileActions.updateProfile({ age: newAgeValue }));
     }
   }, [dispatch]);
-  // const onChangeCountry = useCallback((country: string = '') => {
-  // dispatch(profileActions.updateProfile({ country }));
-  // }, [dispatch]);
+  const onChangeCountry = useCallback((country: COUNTRY) => {
+    dispatch(profileActions.updateProfile({ country }));
+  }, [dispatch]);
   const onChangeCity = useCallback((city: string = '') => {
     dispatch(profileActions.updateProfile({ city }));
   }, [dispatch]);
-  // const onChangeCurrency = useCallback((currncy: string = '') => {
-  // dispatch(profileActions.updateProfile({ currncy }));
-  // }, [dispatch]);
+  const onChangeCurrency = useCallback((currency: CURRENCY) => {
+    dispatch(profileActions.updateProfile({ currency }));
+  }, [dispatch]);
+  const onChangeAvatar = useCallback((avatar: string = '') => {
+    dispatch(profileActions.updateProfile({ avatar }));
+  }, [dispatch]);
 
   return (
     <DynamicReducerLoader reducersList={reducers} removeAfterUnmount>
@@ -64,14 +72,14 @@ const ProfilePage = () => {
         isLoading={isLoading}
         error={error}
         readonly={readonly}
+        onChangeUsername={onChangeUsername}
         onChangeFirstname={onChangeFirstname}
         onChangeLastname={onChangeLastname}
         onChangeAge={onChangeAge}
-        // onChangeCountry={onChangeCountry}
-        onChangeCountry={() => undefined}
+        onChangeCountry={onChangeCountry}
         onChangeCity={onChangeCity}
-        // onChangeCurrency={onChangeCurrency}
-        onChangeCurrency={() => undefined}
+        onChangeCurrency={onChangeCurrency}
+        onChangeAvatar={onChangeAvatar}
       />
     </DynamicReducerLoader>
   );

@@ -1,0 +1,42 @@
+.wrapper {
+  display: flex;
+}
+
+.disabled {
+  opacity: 0.7;
+}
+
+.select {
+  background: none;
+  outline: none;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  padding: 4px;
+}
+
+.option {
+  color: var(--inverted-primary-color);
+  background: var(--inverted-bg-color);
+}
+
+.verticalAlign {
+  &.wrapper {
+    flex-direction: column;
+    width: fit-content;
+    min-width: 20px;
+  }
+
+  & .label {
+    margin-bottom: 8px;
+  }
+}
+
+.horizontalAlign {
+  &.wrapper {
+    align-items: center;
+  }
+
+  & .label {
+    margin-right: 8px;
+  }
+}

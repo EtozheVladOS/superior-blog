@@ -10,6 +10,7 @@ export interface SidebarItemType {
   text: string;
   translationName: TransaltionNames;
   Icon: React.VFC<React.SVGProps<SVGSVGElement>>;
+  authOnly?: boolean;
 }
 
 export const SidebarItemsList: SidebarItemType[] = [
@@ -30,5 +31,6 @@ export const SidebarItemsList: SidebarItemType[] = [
     Icon: ProfileIcon,
     translationName: TransaltionNames.PROFILE,
     text: 'profile.page',
+    authOnly: true,
   },
 ];

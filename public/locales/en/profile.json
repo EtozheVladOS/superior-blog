@@ -1,11 +1,13 @@
 {
   "profile.page": "Profile",
+  "input.username": "Username",
   "input.firstname": "Firstname",
   "input.lastname": "Lastname",
   "input.age": "Age",
   "input.country": "Country",
   "input.city": "City",
   "input.currency": "Currency",
+  "input.avatar": "Link to avatar",
   "edit": "Edit",
   "save": "Save",
   "cancel": "Cancel",

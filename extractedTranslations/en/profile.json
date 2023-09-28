@@ -1,12 +1,22 @@
 {
+  "cancel": "",
   "edit": "",
+  "failFetch": "",
   "input": {
+    "age": "",
+    "avatar": "",
+    "city": "",
+    "country": "",
+    "currency": "",
     "firstname": "",
-    "lastname": ""
+    "lastname": "",
+    "username": ""
   },
   "profile": {
     "firstname": "",
     "lastname": "",
     "page": ""
-  }
+  },
+  "save": "",
+  "tryToRefetch": ""
 }

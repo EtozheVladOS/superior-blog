@@ -21,6 +21,8 @@
   "auth_form_title": "auth_form_title",
   "cancel": "cancel",
   "collapse": "collapse",
+  "countrySelect": "countrySelect",
+  "currencySelect": "currencySelect",
   "edit": "edit",
   "error": "error",
   "fail": "fail",
@@ -28,11 +30,13 @@
   "firstname": "firstname",
   "input": {
     "age": "age",
+    "avatar": "avatar",
     "city": "city",
     "country": "country",
     "currency": "currency",
     "firstname": "firstname",
-    "lastname": "lastname"
+    "lastname": "lastname",
+    "username": "username"
   },
   "lastname": {
     "input": "input"

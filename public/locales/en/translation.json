@@ -11,6 +11,8 @@
   "username": "Username",
   "password": "Password",
   "auth.form.title": "Auth form",
-  "wrong.auth.data": "Wrong username or password"
+  "wrong.auth.data": "Wrong username or password",
+  "currencySelect": "Currency",
+  "countrySelect": "Country"
 }
 

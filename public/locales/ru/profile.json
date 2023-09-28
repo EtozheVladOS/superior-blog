@@ -1,11 +1,13 @@
 {
   "profile.page": "Профиль",
+  "input.username": "Логин",
   "input.firstname": "Имя",
   "input.lastname": "Фамилия",
   "input.age": "Возраст",
   "input.country": "Страна",
   "input.city": "Город",
   "input.currency": "Валюта",
+  "input.avatar": "Ссылка на аватар",
   "edit": "Редактировать",
   "save": "Сохранить",
   "cancel": "Отменить",

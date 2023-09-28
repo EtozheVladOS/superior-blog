@@ -3,10 +3,13 @@ import { TEXT_THEMES, Text } from '@/shared/ui/Text/Text';
 import { ConsoleInput } from '@/shared/ui/ConsoleInput';
 import { getTextWithGrearetTnanSymbol } from
   '@/shared/utils/getTextWithGrearetTnanSymbol/getTextWithGrearetTnanSymbol';
-import styles from './ProfileCard.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Profile } from '../../model/types/profile';
 import { Spinner } from '@/shared/ui/Spinner';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { CurrencySelect, CURRENCY } from '@/entities/Currency';
+import styles from './ProfileCard.module.scss';
+import { Profile } from '../../model/types/profile';
+import { COUNTRY, CountrySelect } from '@/entities/Country';
 
 interface ProfileCardProps {
   className?: string;
@@ -16,10 +19,12 @@ interface ProfileCardProps {
   readonly?: boolean;
   onChangeFirstname?: (value?: string) => void;
   onChangeLastname?: (value?: string) => void;
+  onChangeUsername?: (value?: string) => void;
   onChangeAge?: (value?: string) => void;
-  onChangeCountry?: (value?: string) => void;
+  onChangeCountry?: (value: COUNTRY) => void;
   onChangeCity?: (value?: string) => void;
-  onChangeCurrency?: (value?: string) => void;
+  onChangeCurrency?: (value: CURRENCY) => void;
+  onChangeAvatar?: (value?: string) => void;
 }
 
 export const ProfileCard = ({
@@ -30,10 +35,12 @@ export const ProfileCard = ({
   readonly = true,
   onChangeFirstname,
   onChangeLastname,
+  onChangeUsername,
   onChangeAge,
   onChangeCountry,
   onChangeCity,
   onChangeCurrency,
+  onChangeAvatar,
 }: ProfileCardProps) => {
   const { t } = useTranslation('profile');
 
@@ -61,6 +68,17 @@ export const ProfileCard = ({
   return (
     <div className={classNames(styles.profileCard, {}, [className])}>
       <div>
+        <div className={styles.avatarWrapper}>
+          <Avatar src={data?.avatar} />
+        </div>
+
+        <ConsoleInput
+          value={data?.username}
+          onChange={onChangeUsername}
+          placeholder={getTextWithGrearetTnanSymbol(t('input.username'))}
+          wrapperClassName={styles.input}
+          disabled={readonly}
+        />
         <ConsoleInput
           value={data?.firstname}
           onChange={onChangeFirstname}
@@ -82,11 +100,11 @@ export const ProfileCard = ({
           wrapperClassName={styles.input}
           disabled={readonly}
         />
-        <ConsoleInput
+        <CountrySelect
           value={data?.country}
           onChange={onChangeCountry}
-          placeholder={getTextWithGrearetTnanSymbol(t('input.country'))}
-          wrapperClassName={styles.input}
+          label={getTextWithGrearetTnanSymbol(t('input.country'))}
+          className={styles.input}
           disabled={readonly}
         />
         <ConsoleInput
@@ -96,10 +114,17 @@ export const ProfileCard = ({
           wrapperClassName={styles.input}
           disabled={readonly}
         />
-        <ConsoleInput
+        <CurrencySelect
           value={data?.currency}
           onChange={onChangeCurrency}
-          placeholder={getTextWithGrearetTnanSymbol(t('input.currency'))}
+          label={getTextWithGrearetTnanSymbol(t('input.currency'))}
+          className={styles.input}
+          disabled={readonly}
+        />
+        <ConsoleInput
+          value={data?.avatar}
+          onChange={onChangeAvatar}
+          placeholder={getTextWithGrearetTnanSymbol(t('input.avatar'))}
           wrapperClassName={styles.input}
           disabled={readonly}
         />

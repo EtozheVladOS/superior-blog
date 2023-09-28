@@ -25,13 +25,14 @@ const profileSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchProfileData.pending, (state, action) => {
+      .addCase(fetchProfileData.pending, (state) => {
         state.error = undefined;
         state.isLoading = true;
       })
       .addCase(fetchProfileData.fulfilled, (state, action: PayloadAction<Profile>) => {
         state.error = undefined;
         state.isLoading = false;
+        state.readonly = true;
         state.data = action.payload;
         state.editableForm = action.payload;
       })
@@ -40,13 +41,14 @@ const profileSlice = createSlice({
         state.isLoading = false;
       })
 
-      .addCase(updateProfileData.pending, (state, action) => {
+      .addCase(updateProfileData.pending, (state) => {
         state.error = undefined;
         state.isLoading = true;
       })
       .addCase(updateProfileData.fulfilled, (state, action: PayloadAction<Profile>) => {
         state.error = undefined;
         state.isLoading = false;
+        state.readonly = true;
         state.data = action.payload;
         state.editableForm = action.payload;
       })
