@@ -12,5 +12,10 @@
   "save": "Save",
   "cancel": "Cancel",
   "failFetch": "There was an error loading profile",
-  "tryToRefetch": "Try to refresh the page"
+  "tryToRefetch": "Try to refresh the page",
+  "incorrectProfileData": "Incorrect firstname or lastname",
+  "incorrectAge": "Incorrect age",
+  "incorrectCountry": "Incorrect country",
+  "noneProfileData": "Pfofile data is empty",
+  "updateProfileServerError": "Something went wrong while updating profile page."
 }

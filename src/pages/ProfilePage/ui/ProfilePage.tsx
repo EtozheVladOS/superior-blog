@@ -1,16 +1,21 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { DynamicReducerLoader, ReducersList } from '@/shared/lib/components/DynamicReducerLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Text, TEXT_THEMES } from '@/shared/ui/Text/Text';
 import { CURRENCY } from '@/entities/Currency';
 import { COUNTRY } from '@/entities/Country';
 import {
   ProfileCard,
+  TRANSLATION_VALIDATE_PROFILE_ERROR,
+  VALIDATE_PROFILE_ERROR,
   fetchProfileData,
   getProfileEditableForm,
   getProfileError,
   getProfileIsLoadnig,
   getProfileReadonly,
+  getProfileValidateErrors,
   profileActions,
   profileReducer,
 } from '@/entities/Profile';
@@ -24,11 +29,13 @@ const reducers: ReducersList = {
 
 const ProfilePage = () => {
   const dispatch = useAppDispatch();
+  const { t } = useTranslation('profile');
 
   const editableForm = useSelector(getProfileEditableForm);
   const isLoading = useSelector(getProfileIsLoadnig);
   const error = useSelector(getProfileError);
   const readonly = useSelector(getProfileReadonly);
+  const validateErrors = useSelector(getProfileValidateErrors);
 
   useEffect(() => {
     dispatch(fetchProfileData());
@@ -47,7 +54,7 @@ const ProfilePage = () => {
     const ageIsEmpty = age === '';
 
     if (numRegExp.test(age) || ageIsEmpty) {
-      const newAgeValue = ageIsEmpty ? 0 : Number(age);
+      const newAgeValue = Number(age);
       dispatch(profileActions.updateProfile({ age: newAgeValue }));
     }
   }, [dispatch]);
@@ -64,9 +71,25 @@ const ProfilePage = () => {
     dispatch(profileActions.updateProfile({ avatar }));
   }, [dispatch]);
 
+  const errorList = useMemo(() => validateErrors?.map((err) => {
+    const errorText = TRANSLATION_VALIDATE_PROFILE_ERROR[VALIDATE_PROFILE_ERROR[err]];
+    return (
+      (
+        <Text
+          theme={TEXT_THEMES.ERROR}
+          text={t(errorText)}
+          key={err}
+        />
+      )
+    )
+  }), [validateErrors]);
+
   return (
     <DynamicReducerLoader reducersList={reducers} removeAfterUnmount>
       <ProfilePageHeader />
+
+      {errorList}
+
       <ProfileCard
         data={editableForm}
         isLoading={isLoading}
