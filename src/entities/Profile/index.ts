@@ -14,7 +14,7 @@ export { validateProfileData } from './model/services/validateProfileData/valida
 export { ProfileCard } from './ui/ProfileCard/ProfileCard';
 
 export { getProfileData } from './model/selectors/getProfileData/getProfileData';
-export { getProfileIsLoadnig } from './model/selectors/getProfileIsLoading/getProfileLoading';
+export { getProfileIsLoading } from './model/selectors/getProfileIsLoading/getProfileIsLoading';
 export { getProfileError } from './model/selectors/getProfileError/getProfileError';
 export { getProfileReadonly } from './model/selectors/getProfileReadonly/getProfileReadonly';
 export { getProfileEditableForm }

@@ -13,7 +13,7 @@ import {
   fetchProfileData,
   getProfileEditableForm,
   getProfileError,
-  getProfileIsLoadnig,
+  getProfileIsLoading,
   getProfileReadonly,
   getProfileValidateErrors,
   profileActions,
@@ -32,13 +32,15 @@ const ProfilePage = () => {
   const { t } = useTranslation('profile');
 
   const editableForm = useSelector(getProfileEditableForm);
-  const isLoading = useSelector(getProfileIsLoadnig);
+  const isLoading = useSelector(getProfileIsLoading);
   const error = useSelector(getProfileError);
   const readonly = useSelector(getProfileReadonly);
   const validateErrors = useSelector(getProfileValidateErrors);
 
   useEffect(() => {
-    dispatch(fetchProfileData());
+    if (__PROJECT_ENIRONMENT__ !== 'storybook') {
+      dispatch(fetchProfileData());
+    }
   }, [dispatch]);
 
   const onChangeUsername = useCallback((username: string = '') => {
@@ -74,14 +76,12 @@ const ProfilePage = () => {
   const errorList = useMemo(() => validateErrors?.map((err) => {
     const errorText = TRANSLATION_VALIDATE_PROFILE_ERROR[VALIDATE_PROFILE_ERROR[err]];
     return (
-      (
-        <Text
-          theme={TEXT_THEMES.ERROR}
-          text={t(errorText)}
-          key={err}
-        />
-      )
-    )
+      <Text
+        theme={TEXT_THEMES.ERROR}
+        text={t(errorText)}
+        key={err}
+      />
+    );
   }), [validateErrors]);
 
   return (

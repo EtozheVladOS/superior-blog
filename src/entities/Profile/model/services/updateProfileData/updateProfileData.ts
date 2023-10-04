@@ -24,6 +24,11 @@ export const updateProfileData = createAsyncThunk<
 
     try {
       const response = await extra.api.put<Profile>('/profile', editableForm);
+
+      if (response.data === undefined) {
+        throw new Error();
+      }
+
       return response.data;
     } catch (e) {
       return rejectWithValue([VALIDATE_PROFILE_ERROR.SERVER_ERROR]);
