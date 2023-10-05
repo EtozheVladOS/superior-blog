@@ -14,7 +14,25 @@ export const useTheme = (): UseThemeRes => {
   const { theme = THEMES.LIGHT, setTheme } = useContext(ThemesContext);
 
   const toggleTheme = () => {
-    const themeToSet = theme === THEMES.DARK ? THEMES.LIGHT : THEMES.DARK;
+    let themeToSet: THEMES;
+
+    switch (theme) {
+      case THEMES.LIGHT:
+        themeToSet = THEMES.DARK;
+        break;
+
+      case THEMES.DARK:
+        themeToSet = THEMES.AZURE;
+        break;
+
+      case THEMES.AZURE:
+        themeToSet = THEMES.LIGHT;
+        break;
+
+      default:
+        themeToSet = THEMES.LIGHT;
+    }
+
     localStorage.setItem(LOCAL_STORAGE_THEMES_KEY, themeToSet);
     setTheme?.(themeToSet);
   };
