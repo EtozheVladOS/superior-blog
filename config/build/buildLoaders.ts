@@ -1,8 +1,9 @@
 import webpack from 'webpack';
 import { buildCssLoader } from './loaders/buildCssLoader';
+import { buildBabelLoader } from './loaders/buildBabelLoader';
 import { BuildOptions } from './types/config';
 
-export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
+export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   const svgloader = {
     test: /\.svg$/,
     use: ['@svgr/webpack'],
@@ -18,28 +19,10 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   };
 
   // MiniCssExtractPlugin чтобы сборки прода не грязнились css, а создавались отдельные файлы
-  const cssLoader = buildCssLoader(isDev);
+  const cssLoader = buildCssLoader(options.isDev);
 
-  const babelLoader = {
-    test: /\.(js|jsx|ts|tsx)$/,
-    exclude: /node_modules/,
-    use: {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env'],
-        plugins: [
-          [
-            'i18next-extract',
-            {
-              locales: ['ru', 'en'],
-              keyAsDefaultValue: true,
-            },
-          ],
-          [require.resolve('react-refresh/babel')],
-        ],
-      },
-    },
-  };
+  // Здесь лоадер для i18n и хот рефреш реакта
+  const babelLoader = buildBabelLoader(options);
 
   // если используется js/jsx, то нужно прикрутить babel-loader
   const tsLoader = { // обрабатывает файлы ts/tsx
