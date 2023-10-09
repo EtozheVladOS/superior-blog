@@ -18,6 +18,9 @@ export function buildWebpackConfug(
       // contenthash чтобы main не хешировался в браузере
       path: paths.build,
       clean: true,
+      // Базовый путь для ресурсов приложения
+      // Добавил для корреткной работы роутов (например :id), чтобы тянул чанки из праивльного места
+      publicPath: '/',
     },
     plugins: buildPlugins(options),
     module: {

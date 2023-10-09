@@ -13,6 +13,12 @@
   "about": {
     "page": "page"
   },
+  "article": {
+    "": ""
+  },
+  "articles": {
+    "page": "page"
+  },
   "auth": {
     "form": {
       "title": "title"

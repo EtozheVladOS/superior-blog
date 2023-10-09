@@ -2,5 +2,6 @@ export enum TransaltionNames {
   DEFAULT = '',
   MAIN = 'main',
   ABOUT = 'about',
-  PROFILE = 'profile'
+  PROFILE = 'profile',
+  ARTICLES = 'articles'
 }
