@@ -1,0 +1,11 @@
+.container {
+  min-height: 100%;
+}
+
+.avarat {
+  margin: 0 auto;
+}
+
+.skeletons :not(:last-child) {
+  margin-bottom: 12px;
+}

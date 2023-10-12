@@ -1,5 +1,9 @@
 {
   "articles": {
     "page": ""
+  },
+  "error-loading": "",
+  "not": {
+    "found": ""
   }
 }

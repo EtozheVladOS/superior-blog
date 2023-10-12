@@ -4,6 +4,7 @@
   background-color: var(--inverted-bg-color);
   position: relative;
   transition: width 250ms;
+  box-shadow: 0 20px 20px 0 var(--overlay-color);
 }
 
 .collapsed {

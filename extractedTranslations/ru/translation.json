@@ -16,6 +16,7 @@
   "article": {
     "": ""
   },
+  "article-not-found": "article-not-found",
   "articles": {
     "page": "page"
   },
@@ -30,7 +31,9 @@
   "countrySelect": "countrySelect",
   "currencySelect": "currencySelect",
   "edit": "edit",
+  "er": "er",
   "error": "error",
+  "error-loading": "error-loading",
   "fail": "fail",
   "failFetch": "failFetch",
   "firstname": "firstname",
@@ -56,6 +59,10 @@
     "page": "page"
   },
   "name": "name",
+  "not": {
+    "found": "found"
+  },
+  "not-found": "not-found",
   "page": {
     "not": {
       "found": "found"

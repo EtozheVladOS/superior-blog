@@ -1,0 +1,11 @@
+.skeleton {
+  background: linear-gradient(98deg, var(--skeleton-shadow) 3%, var(--skeleton-color) 18%, var(--skeleton-shadow) 30%);
+  background-size: 200% 200%;
+  animation: 1s shine linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}

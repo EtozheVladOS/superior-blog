@@ -1,3 +1,5 @@
 {
-  "articles.page" : "Articles"
+  "articles.page" : "Articles",
+  "not.found": "Article not found",
+  "error-loading": "Error while loading article"
 }
