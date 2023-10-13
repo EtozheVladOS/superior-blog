@@ -55,3 +55,16 @@ ErrorTextDark.args = {
   theme: TEXT_THEMES.ERROR,
 };
 ErrorTextDark.decorators = [ThemeDecorator(THEMES.DARK)];
+
+export const SmallTextSize = Template.bind({});
+SmallTextSize.args = {
+  title: 'Title title',
+  text: 'Text text text text',
+  size: 'small',
+};
+export const LargeTextSize = Template.bind({});
+LargeTextSize.args = {
+  title: 'Title title',
+  text: 'Text text text text',
+  size: 'large',
+};

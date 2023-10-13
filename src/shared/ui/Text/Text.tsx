@@ -12,7 +12,8 @@ interface TextProps {
   title?: string;
   text?: string;
   theme?: TEXT_THEMES,
-  textAlign?: 'right' | 'left' | 'center'
+  textAlign?: 'right' | 'left' | 'center',
+  size?: 'small' | 'middle' | 'large',
 }
 
 export const Text = memo(({
@@ -21,13 +22,26 @@ export const Text = memo(({
   text,
   theme = TEXT_THEMES.PRIMARY,
   textAlign = 'left',
+  size = 'middle',
 }: TextProps) => {
   const clsMods = {
     [styles.error]: theme === TEXT_THEMES.ERROR,
   };
 
   return (
-    <div className={classNames(styles.text, clsMods, [className, styles[textAlign]])}>
+    <div
+      className={
+        classNames(
+          styles.text,
+          clsMods,
+          [
+            className,
+            styles[textAlign],
+            styles[size],
+          ],
+        )
+      }
+    >
       {title && <p className={styles.title}>{title}</p>}
       {text && <p className={styles.text}>{text}</p>}
     </div>

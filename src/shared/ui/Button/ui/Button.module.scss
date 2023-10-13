@@ -4,6 +4,11 @@
   cursor: pointer;
   background-color: var(--secondary-color);
   color: var(--inverted-secondary-color);
+  transition: all 200ms ease-out;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .size_s {
