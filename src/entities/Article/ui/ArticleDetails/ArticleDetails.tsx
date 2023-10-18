@@ -43,19 +43,21 @@ export const ArticleDetails = memo(({ id }: ArticleDetailsProps) => {
   const errorMsg = useSelector(getArticlesDetailsError);
 
   useEffect(() => {
-    dispatch(fetchArticleById(id));
+    if (__PROJECT_ENIRONMENT__ !== 'storybook') {
+      dispatch(fetchArticleById(id));
+    }
   }, [id]);
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
       case ArticleBlockType.TEXT:
-        return <ArticleTextBlockComponent block={block} className={cl.block} />;
+        return <ArticleTextBlockComponent key={block.id} block={block} className={cl.block} />;
 
       case ArticleBlockType.CODE:
-        return <ArticleCodeBlockComponent block={block} className={cl.block} />;
+        return <ArticleCodeBlockComponent key={block.id} block={block} className={cl.block} />;
 
       case ArticleBlockType.IMAGE:
-        return <ArticleImageBlockComponent block={block} className={cl.block} />;
+        return <ArticleImageBlockComponent key={block.id} block={block} className={cl.block} />;
 
       default:
         return null;

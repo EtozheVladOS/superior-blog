@@ -10,7 +10,7 @@ export default {
 
 const Template: ComponentStory<typeof Code> = (args) => <Code {...args} />;
 
-const children = '<!DOCTYPE html>\n'
+const text = '<!DOCTYPE html>\n'
   + ' <html lang="en">\n'
   + '   <head>\n'
   + '     <meta charset="UTF-8" />\n'
@@ -22,12 +22,12 @@ const children = '<!DOCTYPE html>\n'
   + ' </html>\n';
 
 export const CodeLight = Template.bind({});
-CodeLight.args = { children };
+CodeLight.args = { text };
 
 export const CodeDark = Template.bind({});
-CodeDark.args = { children };
+CodeDark.args = { text };
 CodeDark.decorators = [ThemeDecorator(THEMES.DARK)];
 
 export const CodeAzure = Template.bind({});
-CodeAzure.args = { children };
+CodeAzure.args = { text };
 CodeAzure.decorators = [ThemeDecorator(THEMES.AZURE)];
