@@ -13,5 +13,6 @@
   "auth.form.title": "Форма авторизации",
   "wrong.auth.data": "Вы ввели неверный логин или пароль",
   "currencySelect": "Валюта",
-  "countrySelect": "Страна"
+  "countrySelect": "Страна",
+  "no-comments-yet": "Пока нет комментариев"
 }

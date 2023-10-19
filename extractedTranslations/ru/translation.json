@@ -28,6 +28,9 @@
   "auth_form_title": "auth_form_title",
   "cancel": "cancel",
   "collapse": "collapse",
+  "commants": "commants",
+  "comments": "comments",
+  "comments-not-found": "comments-not-found",
   "countrySelect": "countrySelect",
   "currencySelect": "currencySelect",
   "edit": "edit",
@@ -59,6 +62,7 @@
     "page": "page"
   },
   "name": "name",
+  "no-comments-yet": "no-comments-yet",
   "not": {
     "found": "found"
   },

@@ -1,0 +1,23 @@
+.header,
+.line {
+  margin-bottom: 8px;
+}
+
+.root {
+  padding: 12px;
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+
+  & > :not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
+.line {
+  border: 0.7px solid var(--primary-color);
+}

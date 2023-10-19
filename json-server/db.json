@@ -14,11 +14,26 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://avatars.dzeninfra.ru/get-zen_doc/3614701/pub_5ef7588786b0d9404c6ad81a_5ef759c509ec63125b322f98/scale_1200"
     },
     {
       "id": "2",
       "username": "user",
+      "password": "123",
+      "role": "USER",
+      "avatar": "https://cdn.vox-cdn.com/thumbor/VZNJM5S4Cw2i3JaycT9waVLCwqw=/715x248:1689x721/1200x800/filters:focal(972x299:1278x605)/cdn.vox-cdn.com/uploads/chorus_image/image/69305239/shrek4_disneyscreencaps.com_675.0.jpg"
+    },
+    {
+      "id": "3",
+      "username": "PRO_PROGGER",
+      "password": "123",
+      "role": "USER",
+      "avatar": "https://www.meme-arsenal.com/memes/5d78c376aa914722a6db61d615f58ac6.jpg"
+    },
+    {
+      "id": "4",
+      "username": "undefined_user_js_pro_senior",
       "password": "123",
       "role": "USER"
     }
@@ -102,21 +117,27 @@
   "comments": [
     {
       "id": "1",
-      "text": "some comment",
+      "text": "LOL AHAHAHHAHAHAH ROFL!!!111",
       "articleId": "1",
       "userId": "1"
     },
     {
       "id": "2",
-      "text": "some comment 222",
+      "text": "nice article, bro!",
       "articleId": "1",
       "userId": "2"
     },
     {
       "id": "3",
-      "text": "3 some 3 comment 3",
+      "text": "idk what to say",
       "articleId": "1",
-      "userId": "1"
+      "userId": "3"
+    },
+    {
+      "id": "4",
+      "text": "meh",
+      "articleId": "1",
+      "userId": "4"
     }
   ]
 }

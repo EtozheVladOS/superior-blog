@@ -1,6 +1,6 @@
 import { CSSProperties, memo, useMemo } from 'react';
 import { classNames as cn } from '@/shared/lib/classNames/classNames';
-import defaultPfp from './default-pfp.jpg';
+import defaultPfp from './default-pfp.jpeg';
 import cl from './Avatar.module.scss';
 
 interface AvatarProps {
