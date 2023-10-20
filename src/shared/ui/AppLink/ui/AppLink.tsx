@@ -11,12 +11,14 @@ export enum APP_LINK_THEME {
 interface AppLinkProps extends LinkProps {
   className?: string;
   theme?: APP_LINK_THEME;
+  withoutUnderline?: boolean;
 }
 
 export const AppLink: FC<AppLinkProps> = ({
   className,
   children,
   theme = APP_LINK_THEME.PRIMARY,
+  withoutUnderline,
   ...otherProps
 }) => (
   <Link
@@ -25,6 +27,7 @@ export const AppLink: FC<AppLinkProps> = ({
       {
         [styles.primary]: theme === APP_LINK_THEME.PRIMARY,
         [styles.inverted]: theme === APP_LINK_THEME.INVERTED,
+        [styles.withoutUnderline]: withoutUnderline === true,
       },
       [className],
     )}

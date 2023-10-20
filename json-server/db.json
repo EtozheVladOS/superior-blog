@@ -1,14 +1,49 @@
 {
-  "profile": {
-    "username": "admin",
-    "firstname": "Sasha",
-    "lastname": "Sergeev",
-    "age": 33,
-    "country": "Russia",
-    "city": "Moscow",
-    "currency": "RUB",
-    "avatar": "https://avatars.dzeninfra.ru/get-zen_doc/3614701/pub_5ef7588786b0d9404c6ad81a_5ef759c509ec63125b322f98/scale_1200"
-  },
+  "profile": [
+    {
+      "id": "1",
+      "username": "admin",
+      "firstname": "Sasha",
+      "lastname": "Sergeev",
+      "age": 33,
+      "country": "Russia",
+      "city": "Moscow",
+      "currency": "RUB",
+      "avatar": "https://avatars.dzeninfra.ru/get-zen_doc/3614701/pub_5ef7588786b0d9404c6ad81a_5ef759c509ec63125b322f98/scale_1200"
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "firstname": "Tanya",
+      "lastname": "Sergeeva",
+      "age": 21,
+      "country": "Russia",
+      "city": "Moscow",
+      "currency": "RUB",
+      "avatar": "https://cdn.vox-cdn.com/thumbor/VZNJM5S4Cw2i3JaycT9waVLCwqw=/715x248:1689x721/1200x800/filters:focal(972x299:1278x605)/cdn.vox-cdn.com/uploads/chorus_image/image/69305239/shrek4_disneyscreencaps.com_675.0.jpg"
+    },
+    {
+      "id": "3",
+      "username": "PRO_PROGGER",
+      "firstname": "David",
+      "lastname": "Ivanov",
+      "age": 48,
+      "country": "Russia",
+      "city": "Moscow",
+      "currency": "RUB",
+      "avatar": "https://www.meme-arsenal.com/memes/5d78c376aa914722a6db61d615f58ac6.jpg"
+    },
+    {
+      "id": "4",
+      "username": "undefined_user_js_pro_senior",
+      "firstname": "Viktor",
+      "lastname": "Doom",
+      "age": 20,
+      "country": "Russia",
+      "city": "Moscow",
+      "currency": "RUB"
+    }
+  ],
   "users": [
     {
       "id": "1",
@@ -138,6 +173,30 @@
       "text": "meh",
       "articleId": "1",
       "userId": "4"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "test 2",
+      "id": "E_iju0x"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "test 323",
+      "id": "7YzWvwM"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "test new",
+      "id": "P5rUJLN"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "lil",
+      "id": "9InazUN"
     }
   ]
 }

@@ -3,6 +3,8 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Text } from '@/shared/ui/Text/Text';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { AppLink } from '@/shared/ui/AppLink';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { CommentEntity } from '../../model/types/comment';
 import cl from './CommentCard.module.scss';
 
@@ -30,10 +32,12 @@ export const CommentCard = memo(({ className, isLoading, comment }: CommentCardP
 
   return (
     <div className={classNames(cl.root, {}, [className])}>
-      <div className={cl.header}>
-        <Avatar src={comment.user.avatar} size={50} />
-        <Text text={comment.user.username} />
-      </div>
+      <AppLink to={`${RoutePath.profile}${comment.user.id}`} withoutUnderline>
+        <div className={cl.header}>
+          <Avatar src={comment.user.avatar} size={50} />
+          <Text text={comment.user.username} />
+        </div>
+      </AppLink>
 
       <hr className={cl.line} />
 

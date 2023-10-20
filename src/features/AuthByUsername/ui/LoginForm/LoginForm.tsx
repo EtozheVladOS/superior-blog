@@ -44,7 +44,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const getPlaceholderText = (text: string) => `${text}>`;
 
   return (
-    <DynamicReducerLoader reducersList={initialRedusers} removeAfterUnmount>
+    <DynamicReducerLoader reducersList={initialRedusers}>
       <div className={classNames(styles.form, {}, [className])}>
         <Text title={t('auth.form.title')} className={styles.modalTitle} />
         <ConsoleInput

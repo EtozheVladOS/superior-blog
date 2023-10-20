@@ -34,6 +34,7 @@
   "countrySelect": "countrySelect",
   "currencySelect": "currencySelect",
   "edit": "edit",
+  "enter-comment": "enter-comment",
   "er": "er",
   "error": "error",
   "error-loading": "error-loading",
@@ -90,6 +91,7 @@
     "page": "page"
   },
   "save": "save",
+  "send": "send",
   "something": {
     "went": {
       "wrong": "wrong"

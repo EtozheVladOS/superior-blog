@@ -14,5 +14,7 @@
   "wrong.auth.data": "Вы ввели неверный логин или пароль",
   "currencySelect": "Валюта",
   "countrySelect": "Страна",
-  "no-comments-yet": "Пока нет комментариев"
+  "no-comments-yet": "Пока нет комментариев",
+  "enter-comment": "Введите комментарий",
+  "send": "Отправить"
 }

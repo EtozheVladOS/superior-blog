@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
+import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { DynamicReducerLoader, ReducersList } from '@/shared/lib/components/DynamicReducerLoader';
@@ -20,6 +21,7 @@ import {
   profileReducer,
 } from '@/entities/Profile';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 
 const numRegExp = /^\d+$/;
 
@@ -30,6 +32,7 @@ const reducers: ReducersList = {
 const ProfilePage = () => {
   const dispatch = useAppDispatch();
   const { t } = useTranslation('profile');
+  const { id } = useParams<{ id: string }>();
 
   const editableForm = useSelector(getProfileEditableForm);
   const isLoading = useSelector(getProfileIsLoading);
@@ -37,11 +40,11 @@ const ProfilePage = () => {
   const readonly = useSelector(getProfileReadonly);
   const validateErrors = useSelector(getProfileValidateErrors);
 
-  useEffect(() => {
-    if (__PROJECT_ENIRONMENT__ !== 'storybook') {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id !== undefined) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   const onChangeUsername = useCallback((username: string = '') => {
     dispatch(profileActions.updateProfile({ username }));
@@ -85,7 +88,7 @@ const ProfilePage = () => {
   }), [validateErrors]);
 
   return (
-    <DynamicReducerLoader reducersList={reducers} removeAfterUnmount>
+    <DynamicReducerLoader reducersList={reducers}>
       <ProfilePageHeader />
 
       {errorList}

@@ -1,10 +1,11 @@
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 import { DynamicReducerLoader, ReducersList } from '@/shared/lib/components/DynamicReducerLoader';
 import { ArticleDetails } from '@/entities/Article';
+import { AddCommentForm } from '@/features/AddCommentForm';
 import { Text } from '@/shared/ui/Text/Text';
 import { CommentList } from '@/entities/Comment';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -18,6 +19,9 @@ import { getIsArticleDetailsCommentsLoading } from '../model/selectors/comments'
 import {
   fetchCommentsByArticleId,
 } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import {
+  addCommentForArticle,
+} from '../model/services/addCommentForArticle/addCommentForArticle';
 import cl from './ArticleDetailsPage.module.scss';
 
 const reducers: ReducersList = {
@@ -32,35 +36,21 @@ const ArticleDetailsPage = () => {
   const comments = useSelector(getArticleDetailsComments.selectAll);
   const isCommentsLoading = useSelector(getIsArticleDetailsCommentsLoading);
 
+  const onSendComment = useCallback((value: string | undefined) => {
+    dispatch(addCommentForArticle(value));
+  }, [dispatch]);
+
   useInitialEffect(() => dispatch(fetchCommentsByArticleId(id)));
 
   if (!id) {
     return <div>{t('not.found')}</div>;
   }
 
-  //        {
-  // id: '1',
-  // text: 'ahahahahah lol',
-  // user: {
-  // id: '1',
-  // username: 'PRO_PROGGER',
-  // },
-  // },
-  // {
-  // id: '2',
-  // text: 'nice article',
-  // user: {
-  // id: '2',
-  // username: 'vasyaJKE',
-  // avatar:
-  // 'https://cdn.vox-cdn.com/thumbor/VZNJM5S4Cw2i3JaycT9waVLCwqw=/715x248:1689x721/1200x800/filters:focal(972x299:1278x605)/cdn.vox-cdn.com/uploads/chorus_image/image/69305239/shrek4_disneyscreencaps.com_675.0.jpg',
-  // },
-  // },
-
   return (
-    <DynamicReducerLoader reducersList={reducers} removeAfterUnmount>
+    <DynamicReducerLoader reducersList={reducers}>
       <ArticleDetails id={id} />
       <Text className={cl.commentBlockTitle} title={t('comments')} />
+      <AddCommentForm onSendComment={onSendComment} className={cl.addComment} />
       <CommentList comments={comments} isLoading={isCommentsLoading} />
     </DynamicReducerLoader>
   );
