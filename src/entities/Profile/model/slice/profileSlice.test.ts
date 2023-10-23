@@ -5,6 +5,7 @@ import { profileActions, profileReducer } from './profileSlice';
 import { updateProfileData } from '@/entities/Profile/model/services/updateProfileData/updateProfileData';
 
 const mockProfileData = {
+  id: '1',
   username: 'Testusername',
   firstname: 'Name',
   lastname: 'Last',

@@ -18,6 +18,7 @@ export const TRANSLATION_VALIDATE_PROFILE_ERROR = {
 };
 
 export interface Profile {
+  id?: string;
   username?: string,
   firstname?: string,
   lastname?: string,

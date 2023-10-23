@@ -11,7 +11,7 @@ export const updateProfileData = createAsyncThunk<
   ThunkConfig<VALIDATE_PROFILE_ERROR[]>
 >(
   'profile/updateProfileData',
-  async (_, thunkAPI) => {
+  async (profileId, thunkAPI) => {
     const { extra, rejectWithValue, getState } = thunkAPI;
 
     const editableForm = getProfileEditableForm(getState());
@@ -23,7 +23,7 @@ export const updateProfileData = createAsyncThunk<
     }
 
     try {
-      const response = await extra.api.put<Profile>('/profile', editableForm);
+      const response = await extra.api.put<Profile>(`/profile/${editableForm?.id}`, editableForm);
 
       if (response.data === undefined) {
         throw new Error();

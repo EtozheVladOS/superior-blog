@@ -9,7 +9,7 @@ import { CommentEntity } from '../../model/types/comment';
 import cl from './CommentCard.module.scss';
 
 interface CommentCardProps {
-  comment: CommentEntity;
+  comment?: CommentEntity;
   isLoading?: boolean;
   className?: string;
 }
@@ -17,7 +17,7 @@ interface CommentCardProps {
 export const CommentCard = memo(({ className, isLoading, comment }: CommentCardProps) => {
   if (isLoading) {
     return (
-      <div className={classNames(cl.root, {}, [className])}>
+      <div className={classNames(cl.root, {}, [className, cl.loading])}>
         <div className={cl.header}>
           <Skeleton height={50} width={50} borderRadius="50%" />
           <Skeleton height={20} width={80} />
@@ -30,18 +30,22 @@ export const CommentCard = memo(({ className, isLoading, comment }: CommentCardP
     );
   }
 
+  if (comment === undefined) {
+    return null;
+  }
+
   return (
     <div className={classNames(cl.root, {}, [className])}>
-      <AppLink to={`${RoutePath.profile}${comment.user.id}`} withoutUnderline>
+      <AppLink to={`${RoutePath.profile}${comment?.user.id}`} withoutUnderline>
         <div className={cl.header}>
-          <Avatar src={comment.user.avatar} size={50} />
-          <Text text={comment.user.username} />
+          <Avatar src={comment?.user.avatar} size={50} />
+          <Text text={comment?.user.username} />
         </div>
       </AppLink>
 
       <hr className={cl.line} />
 
-      <Text text={comment.text} />
+      <Text text={comment?.text} />
     </div>
   );
 });

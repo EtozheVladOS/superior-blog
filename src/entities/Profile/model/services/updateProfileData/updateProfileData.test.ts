@@ -5,6 +5,7 @@ import { updateProfileData } from './updateProfileData';
 import { VALIDATE_PROFILE_ERROR } from '@/entities/Profile/model/types/profile';
 
 const mockProfileData = {
+  id: '1',
   username: 'Testusername',
   firstname: 'Name',
   lastname: 'Last',
