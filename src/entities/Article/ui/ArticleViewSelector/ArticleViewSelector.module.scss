@@ -1,0 +1,8 @@
+.container > :not(:last-child) {
+  margin-right: 12px;
+}
+
+.currentView > * {
+  fill: var(--inverted-primary-color) !important;
+  stroke: var(--inverted-primary-color) !important;
+}
