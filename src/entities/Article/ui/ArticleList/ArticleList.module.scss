@@ -1,0 +1,16 @@
+.small {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  & > div {
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.big {
+  & > div {
+    margin-bottom: 20px;
+  }
+}

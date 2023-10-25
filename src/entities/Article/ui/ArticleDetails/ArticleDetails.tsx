@@ -94,7 +94,7 @@ export const ArticleDetails = memo(({ id }: ArticleDetailsProps) => {
 
         <div className={cl.articleInfo}>
           <Icon SvgIcon={CalendarSvg} />
-          <Text text={articleData?.crationDate} />
+          <Text text={articleData?.creationDate} />
         </div>
         <div className={cl.articleInfo}>
           <Icon SvgIcon={EyeSvg} />

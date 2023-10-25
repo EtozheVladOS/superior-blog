@@ -5,12 +5,16 @@ import { articleDeatilsReducer } from './articleDetailsSlice';
 
 const mockArticleData: Article = {
   id: '1',
-  crationDate: '12.09.2023',
+  creationDate: '12.09.2023',
   img: 'https://test-img-com',
   subtitle: 'New technologies in IT for 2022 year',
   title: 'IT news',
   type: [ArticleType.IT, ArticleType.SCIENCE],
   views: 771,
+  user: {
+    id: '1',
+    username: 'name',
+  },
   blocks: [{
     id: '1',
     type: ArticleBlockType.TEXT,

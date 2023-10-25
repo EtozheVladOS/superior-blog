@@ -1,6 +1,9 @@
 {
-  "articles.page" : "Articles",
+  "articles.page": "Articles",
   "not.found": "Article not found",
   "error-loading": "Error while loading article",
-  "comments": "Comments"
+  "comments": "Comments",
+  "no-articles-yet": "No articles yet",
+  "read-more": "Read more...",
+  "back-to-list": "Back to list"
 }

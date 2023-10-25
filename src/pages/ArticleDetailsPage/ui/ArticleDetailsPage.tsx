@@ -1,16 +1,19 @@
 import { memo, useCallback } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { DynamicReducerLoader, ReducersList } from '@/shared/lib/components/DynamicReducerLoader';
 import { ArticleDetails } from '@/entities/Article';
 import { AddCommentForm } from '@/features/AddCommentForm';
 import { Text } from '@/shared/ui/Text/Text';
 import { CommentList } from '@/entities/Comment';
+import { Button, THEME_BTN } from '@/shared/ui/Button/ui/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 
+import cl from './ArticleDetailsPage.module.scss';
 import {
   articleDetailsCommentsReducer,
   getArticleDetailsComments,
@@ -22,7 +25,6 @@ import {
 import {
   addCommentForArticle,
 } from '../model/services/addCommentForArticle/addCommentForArticle';
-import cl from './ArticleDetailsPage.module.scss';
 
 const reducers: ReducersList = {
   articleDetaildComments: articleDetailsCommentsReducer,
@@ -31,6 +33,7 @@ const reducers: ReducersList = {
 const ArticleDetailsPage = () => {
   const { t } = useTranslation('articles');
   const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
   const comments = useSelector(getArticleDetailsComments.selectAll);
@@ -40,6 +43,10 @@ const ArticleDetailsPage = () => {
     dispatch(addCommentForArticle(value));
   }, [dispatch]);
 
+  const onBackToList = useCallback(() => {
+    navigate(RoutePath.articles);
+  }, [navigate]);
+
   useInitialEffect(() => dispatch(fetchCommentsByArticleId(id)));
 
   if (!id) {
@@ -48,6 +55,9 @@ const ArticleDetailsPage = () => {
 
   return (
     <DynamicReducerLoader reducersList={reducers}>
+      <Button onClick={onBackToList} theme={THEME_BTN.OUTLINE}>
+        {t('back-to-list')}
+      </Button>
       <ArticleDetails id={id} />
       <Text className={cl.commentBlockTitle} title={t('comments')} />
       <AddCommentForm onSendComment={onSendComment} className={cl.addComment} />

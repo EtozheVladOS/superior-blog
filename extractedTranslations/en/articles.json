@@ -2,9 +2,12 @@
   "articles": {
     "page": ""
   },
+  "back-to-list": "",
   "comments": "",
   "error-loading": "",
+  "no-articles-yet": "",
   "not": {
     "found": ""
-  }
+  },
+  "read-more": "read-more"
 }

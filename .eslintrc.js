@@ -56,6 +56,7 @@ module.exports = {
     ],
     'react-hooks/rules-of-hooks': 'warn',
     'react-hooks/exhaustive-deps': 'warn',
+    'react/no-array-index-key': 'warn',
     'no-param-reassign': 'off',
     'no-undef': 'off',
     'arrow-body-style': 'off',

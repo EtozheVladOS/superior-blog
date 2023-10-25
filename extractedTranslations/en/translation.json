@@ -20,12 +20,15 @@
   "articles": {
     "page": "page"
   },
+  "articles-not-found": "articles-not-found",
   "auth": {
     "form": {
       "title": "title"
     }
   },
   "auth_form_title": "",
+  "back-to-articles": "back-to-articles",
+  "back-to-list": "back-to-list",
   "cancel": "cancel",
   "collapse": "collapse",
   "commants": "commants",
@@ -63,6 +66,7 @@
     "page": "page"
   },
   "name": "name",
+  "no-articles-yet": "no-articles-yet",
   "no-comments-yet": "no-comments-yet",
   "not": {
     "found": "found"
@@ -87,6 +91,7 @@
   "prolastname": {
     "input": "input"
   },
+  "read-more": "read-more",
   "reload": {
     "page": "page"
   },

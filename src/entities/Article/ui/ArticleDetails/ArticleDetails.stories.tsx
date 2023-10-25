@@ -6,7 +6,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { ArticleBlockType, ArticleType } from '@/entities/Article/model/types/article';
 
 export default {
-  title: 'entities/ArticleDetails',
+  title: 'entities/Article/ArticleDetails',
   component: ArticleDetails,
 } as ComponentMeta<typeof ArticleDetails>;
 
@@ -20,7 +20,7 @@ const articleStoreDecorator = StoreDecorator({
       subtitle: 'New technologies in IT for 2022 year',
       img: 'https://cdn.theatlantic.com/thumbor/Z0bW9vInINLE5PD0optALlEnCic=/0x0:2000x1125/1600x900/media/img/mt/2022/05/Atl_UFO_gov_v1/original.png',
       views: 771,
-      crationDate: '12.09.2023',
+      creationDate: '12.09.2023',
       type: [ArticleType.IT, ArticleType.SCIENCE],
       blocks: [
         {
