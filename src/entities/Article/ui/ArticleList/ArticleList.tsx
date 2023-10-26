@@ -28,21 +28,15 @@ export const ArticleList = memo(({
 }: ArticleListProps) => {
   const { t } = useTranslation('articles');
 
-  if (isLoading) {
-    return (
-      <div className={classNames(cl.articleList, {}, [className, cl[view]])}>
-        {getSkeletons(view)}
-      </div>
-    );
-  }
-
   return (
     <div className={classNames(cl.articleList, {}, [className, cl[view]])}>
       {articles.length > 0
         ? articles.map((article) => (
           <ArticleListItem article={article} view={view} key={article.id} />
         ))
-        : <Text text={t('no-articles-yet')} />}
+        : !isLoading && <Text text={t('no-articles-yet')} />}
+
+      {isLoading && getSkeletons(view)}
     </div>
   );
 });

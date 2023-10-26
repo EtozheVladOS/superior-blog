@@ -27,6 +27,7 @@ export default {
   ],
   moduleNameMapper: {
     '@/(.*)(.svg)': '<rootDir>config/jest/jestEmptyComponent.tsx',
+    '\\.(jpg|jpeg|png)$': 'identity-obj-proxy',
     '\\.s?css$': 'identity-obj-proxy',
     '@/(.*)': '<rootDir>src/$1',
   },

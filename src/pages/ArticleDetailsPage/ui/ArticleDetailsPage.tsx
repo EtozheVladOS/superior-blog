@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
+import { PageWrapper } from '@/shared/ui/PageWrapper/PageWrapper';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { DynamicReducerLoader, ReducersList } from '@/shared/lib/components/DynamicReducerLoader';
 import { ArticleDetails } from '@/entities/Article';
@@ -54,15 +55,17 @@ const ArticleDetailsPage = () => {
   }
 
   return (
-    <DynamicReducerLoader reducersList={reducers}>
-      <Button onClick={onBackToList} theme={THEME_BTN.OUTLINE}>
-        {t('back-to-list')}
-      </Button>
-      <ArticleDetails id={id} />
-      <Text className={cl.commentBlockTitle} title={t('comments')} />
-      <AddCommentForm onSendComment={onSendComment} className={cl.addComment} />
-      <CommentList comments={comments} isLoading={isCommentsLoading} />
-    </DynamicReducerLoader>
+    <PageWrapper>
+      <DynamicReducerLoader reducersList={reducers}>
+        <Button onClick={onBackToList} theme={THEME_BTN.OUTLINE}>
+          {t('back-to-list')}
+        </Button>
+        <ArticleDetails id={id} />
+        <Text className={cl.commentBlockTitle} title={t('comments')} />
+        <AddCommentForm onSendComment={onSendComment} className={cl.addComment} />
+        <CommentList comments={comments} isLoading={isCommentsLoading} />
+      </DynamicReducerLoader>
+    </PageWrapper>
   );
 };
 
