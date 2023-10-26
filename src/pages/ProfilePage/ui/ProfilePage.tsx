@@ -2,8 +2,11 @@ import { useCallback, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+
+import { PageWrapper } from '@/shared/ui/PageWrapper/PageWrapper';
 import { DynamicReducerLoader, ReducersList } from '@/shared/lib/components/DynamicReducerLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Text, TEXT_THEMES } from '@/shared/ui/Text/Text';
 import { CURRENCY } from '@/entities/Currency';
 import { COUNTRY } from '@/entities/Country';
@@ -21,7 +24,6 @@ import {
   profileReducer,
 } from '@/entities/Profile';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 
 const numRegExp = /^\d+$/;
 
@@ -88,26 +90,28 @@ const ProfilePage = () => {
   }), [validateErrors]);
 
   return (
-    <DynamicReducerLoader reducersList={reducers}>
-      <ProfilePageHeader />
+    <PageWrapper>
+      <DynamicReducerLoader reducersList={reducers}>
+        <ProfilePageHeader />
 
-      {errorList}
+        {errorList}
 
-      <ProfileCard
-        data={editableForm}
-        isLoading={isLoading}
-        error={error}
-        readonly={readonly}
-        onChangeUsername={onChangeUsername}
-        onChangeFirstname={onChangeFirstname}
-        onChangeLastname={onChangeLastname}
-        onChangeAge={onChangeAge}
-        onChangeCountry={onChangeCountry}
-        onChangeCity={onChangeCity}
-        onChangeCurrency={onChangeCurrency}
-        onChangeAvatar={onChangeAvatar}
-      />
-    </DynamicReducerLoader>
+        <ProfileCard
+          data={editableForm}
+          isLoading={isLoading}
+          error={error}
+          readonly={readonly}
+          onChangeUsername={onChangeUsername}
+          onChangeFirstname={onChangeFirstname}
+          onChangeLastname={onChangeLastname}
+          onChangeAge={onChangeAge}
+          onChangeCountry={onChangeCountry}
+          onChangeCity={onChangeCity}
+          onChangeCurrency={onChangeCurrency}
+          onChangeAvatar={onChangeAvatar}
+        />
+      </DynamicReducerLoader>
+    </PageWrapper>
   );
 };
 

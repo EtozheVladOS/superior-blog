@@ -28,7 +28,7 @@ export const Navbar = ({ className }: NavbarProps) => {
 
   if (authData) {
     return (
-      <div className={classNames(styles.navbar, {}, [className])}>
+      <header className={classNames(styles.navbar, {}, [className])}>
         <div className={styles.links}>
           <Button
             theme={THEME_BTN.CLEAR_INVERTED}
@@ -37,12 +37,12 @@ export const Navbar = ({ className }: NavbarProps) => {
             {t('logout')}
           </Button>
         </div>
-      </div>
+      </header>
     );
   }
 
   return (
-    <div className={classNames(styles.navbar, {}, [className])}>
+    <header className={classNames(styles.navbar, {}, [className])}>
       <div className={styles.links} />
       <Button
         theme={THEME_BTN.CLEAR_INVERTED}
@@ -51,6 +51,6 @@ export const Navbar = ({ className }: NavbarProps) => {
         {t('login')}
       </Button>
       <LoginModal visible={authModalVisible} onClose={toggleModalVisibility} />
-    </div>
+    </header>
   );
 };
