@@ -22,8 +22,6 @@ export class TestAsyncThunk<ReturnValue, Arg, RejectValue> {
 
   dispatch: jest.MockedFn<any>;
 
-  navigate: jest.MockedFn<any>;
-
   api: jest.MockedFunctionDeep<AxiosStatic>;
 
   getState: () => StateSchema;
@@ -33,10 +31,9 @@ export class TestAsyncThunk<ReturnValue, Arg, RejectValue> {
     state?: DeepPartial<StateSchema>,
   ) {
     this.actionCreator = actionCreator;
-    // dispatch, getState, navigate - mock for redux working
+    // dispatch, getState - mock for redux working
     this.dispatch = jest.fn();
     this.getState = jest.fn(() => state as StateSchema);
-    this.navigate = jest.fn();
     this.api = mockedAxios;
   }
 
@@ -47,7 +44,7 @@ export class TestAsyncThunk<ReturnValue, Arg, RejectValue> {
     const thunk = await action(
       this.dispatch,
       this.getState,
-      { api: this.api, navigate: this.navigate },
+      { api: this.api },
     );
     return thunk;
   }

@@ -13,3 +13,4 @@ export const getArticlesPageLimit = (state: StateSchema) => state.articlesPage?.
 export const getArticlesPageHasMoreContent = (
   state: StateSchema,
 ) => state.articlesPage?.hasMoreContent;
+export const getArticlesReducerInited = (state: StateSchema) => state.articlesPage?._inited;

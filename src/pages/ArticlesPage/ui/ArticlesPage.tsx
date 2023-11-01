@@ -15,14 +15,13 @@ import {
   articlesPageReducer,
   getArticles,
 } from '../model/slices/articlesPageSlice';
-import { fetchArticlesList } from '../model/services/fetchArticlesList/fetchArticlesList';
+import { initArticlesPage } from '../model/services/initArticlesPage/initArticlesPage';
 import {
   fetchNextArticlesPage,
 } from '../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import {
   getArticlesPageView,
   getIsArticlesPageLoading,
-  getArticlesPageError,
 } from '../model/selectors/articlesPageSelectors';
 
 const reducersList: ReducersList = {
@@ -36,11 +35,9 @@ const ArticlesPage = () => {
   const articles = useSelector(getArticles.selectAll);
   const view = useSelector(getArticlesPageView);
   const isLoading = useSelector(getIsArticlesPageLoading);
-  const error = useSelector(getArticlesPageError);
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState());
-    dispatch(fetchArticlesList({ page: 1 }));
+    dispatch(initArticlesPage());
   });
 
   const onViewClick = useCallback((view: ArticleView) => {
@@ -53,7 +50,7 @@ const ArticlesPage = () => {
 
   return (
     <PageWrapper onScrollEnd={onLoadNextArticlePage}>
-      <DynamicReducerLoader reducersList={reducersList}>
+      <DynamicReducerLoader reducersList={reducersList} removeAfterUnmount={false}>
         <Text title={t('articles.page')} className={cl.title} />
         <ArticleViewSelector view={view} onViewClick={onViewClick} />
         <ArticleList
