@@ -8,6 +8,7 @@ import {
 import { AxiosInstance } from 'axios';
 import { CounterSchema } from '@/entities/Counter';
 import { UserSchema } from '@/entities/User';
+import { ScrollRestorationSchema } from '@/features/ScrollRestoration';
 import { LoginSchema } from '@/features/AuthByUsername';
 import { ProfileSchema } from '@/entities/Profile';
 import { ArticleDetailsSchema } from '@/entities/Article';
@@ -18,6 +19,7 @@ import { ArticlePageSchema } from '@/pages/ArticlesPage';
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
+  sctollRestoration: ScrollRestorationSchema;
 
   // Async reducers
   loginForm?: LoginSchema;

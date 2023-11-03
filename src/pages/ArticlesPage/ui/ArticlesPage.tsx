@@ -2,7 +2,7 @@ import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import { PageWrapper } from '@/shared/ui/PageWrapper/PageWrapper';
+import { PageWrapper } from '@/widgets/PageWrapper/PageWrapper';
 import { Text } from '@/shared/ui/Text/Text';
 import { ArticleList, ArticleView, ArticleViewSelector } from '@/entities/Article';
 import { DynamicReducerLoader, ReducersList } from '@/shared/lib/components/DynamicReducerLoader';
@@ -49,7 +49,7 @@ const ArticlesPage = () => {
   }, [dispatch]);
 
   return (
-    <PageWrapper onScrollEnd={onLoadNextArticlePage}>
+    <PageWrapper onScrollEnd={onLoadNextArticlePage} shouldRestoreScroll>
       <DynamicReducerLoader reducersList={reducersList} removeAfterUnmount={false}>
         <Text title={t('articles.page')} className={cl.title} />
         <ArticleViewSelector view={view} onViewClick={onViewClick} />
