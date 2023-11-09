@@ -16,5 +16,13 @@
   "countrySelect": "Country",
   "no-comments-yet": "No comments yet",
   "enter-comment": "Enter a comment",
-  "send": "Send"
+  "send": "Send",
+  "sort-by": "Sort by",
+  "by": "by",
+  "ascending": "ascending",
+  "descending": "descending",
+  "search": "Search",
+  "sort-created-at": "creation date",
+  "sort-title": "title",
+  "sort-views": "count of views"
 }

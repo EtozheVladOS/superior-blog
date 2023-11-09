@@ -21,6 +21,7 @@
     "page": "page"
   },
   "articles-not-found": "articles-not-found",
+  "ascending": "ascending",
   "auth": {
     "form": {
       "title": "title"
@@ -29,6 +30,7 @@
   "auth_form_title": "auth_form_title",
   "back-to-articles": "back-to-articles",
   "back-to-list": "back-to-list",
+  "by": "by",
   "cancel": "cancel",
   "collapse": "collapse",
   "commants": "commants",
@@ -36,6 +38,7 @@
   "comments-not-found": "comments-not-found",
   "countrySelect": "countrySelect",
   "currencySelect": "currencySelect",
+  "descending": "descending",
   "edit": "edit",
   "enter-comment": "enter-comment",
   "er": "er",
@@ -96,12 +99,21 @@
     "page": "page"
   },
   "save": "save",
+  "search": "search",
   "send": "send",
   "something": {
     "went": {
       "wrong": "wrong"
     }
   },
+  "sort": {
+    "by": "by"
+  },
+  "sort-by": "sort-by",
+  "sort-created-at": "sort-created-at",
+  "sort-title": "sort-title",
+  "sort-views": "sort-views",
+  "sortBy": "sortBy",
   "test": {
     "btn": "btn"
   },

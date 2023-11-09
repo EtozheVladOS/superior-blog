@@ -17,7 +17,7 @@ export const initArticlesPage = createAsyncThunk<
 
     if (!isReducerInited) {
       dispatch(articlesPageActions.initState());
-      dispatch(fetchArticlesList({ page: 1 }));
+      dispatch(fetchArticlesList({}));
     }
   },
 );

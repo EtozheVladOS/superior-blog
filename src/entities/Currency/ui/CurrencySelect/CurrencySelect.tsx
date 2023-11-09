@@ -7,7 +7,7 @@ import { CURRENCY } from '../../model/types/currency';
 
 export const currencyOptions = makeSelectOptionsFromObj(CURRENCY);
 
-type CurrencySelectProps = Omit<SelectProps, 'value' | 'onChange'> & {
+type CurrencySelectProps = Omit<SelectProps<CURRENCY>, 'value' | 'onChange'> & {
   value?: CURRENCY;
   onChange?: (value: CURRENCY) => void;
 }

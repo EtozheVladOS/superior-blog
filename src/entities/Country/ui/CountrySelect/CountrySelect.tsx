@@ -7,7 +7,7 @@ import { Select, SelectProps } from '@/shared/ui/Select/Select';
 
 export const countryOptions = makeSelectOptionsFromObj(COUNTRY);
 
-type CountrySelectProps = Omit<SelectProps, 'value' | 'onChange'> & {
+type CountrySelectProps = Omit<SelectProps<COUNTRY>, 'value' | 'onChange'> & {
   value?: COUNTRY;
   onChange?: (value: COUNTRY) => void;
 }

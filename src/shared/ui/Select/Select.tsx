@@ -1,25 +1,23 @@
-import {
-  ChangeEventHandler, memo, useCallback, useMemo,
-} from 'react';
+import { ChangeEventHandler, useCallback, useMemo } from 'react';
 import { classNames as cn, ClassnamesMods } from '@/shared/lib/classNames/classNames';
 import cl from './Select.module.scss';
 
-export type SelectOption = {
-  value: string;
+export type SelectOption<T extends string> = {
+  value: T;
   name: string;
 }
 
-export interface SelectProps {
+export interface SelectProps<T extends string> {
   className?: string;
   label?: string;
   align?: 'vertical' | 'horizontal';
-  options?: SelectOption[];
-  value?: string;
+  options?: SelectOption<T>[];
+  value?: T;
   disabled?: boolean;
-  onChange?: (value: string) => void;
+  onChange?: (value: T) => void;
 }
 
-export const Select = memo(({
+export const Select = <T extends string>({
   className,
   label,
   align = 'horizontal',
@@ -27,7 +25,7 @@ export const Select = memo(({
   value,
   disabled = false,
   onChange,
-}: SelectProps) => {
+}: SelectProps<T>) => {
   const mods: ClassnamesMods = {
     [cl.verticalAlign]: align === 'vertical',
     [cl.horizontalAlign]: align === 'horizontal',
@@ -39,7 +37,7 @@ export const Select = memo(({
   )), [options]);
 
   const onSelectChange: ChangeEventHandler<HTMLSelectElement> = useCallback((e) => {
-    onChange?.(e.target.value);
+    onChange?.(e.target.value as T);
   }, [onChange]);
 
   return (
@@ -55,4 +53,4 @@ export const Select = memo(({
       </select>
     </div>
   );
-});
+};

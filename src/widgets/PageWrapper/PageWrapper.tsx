@@ -14,9 +14,9 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { getSctollRestorationByPath, scrollRestorationActions } from '@/features/ScrollRestoration';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { StateSchema } from '@/app/providers/StoreProvider';
+import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 
 import cl from './PageWrapper.module.scss';
-import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 
 interface PageWrapperProps {
   children: ReactNode;
@@ -69,7 +69,7 @@ export const PageWrapper = memo(({
       className={classNames(cl.wrapper, {}, [className])}
     >
       {children}
-      <div ref={triggerRef} />
+      {shouldRestoreScroll && <div ref={triggerRef} className={cl.trigger} />}
     </section>
   );
 });

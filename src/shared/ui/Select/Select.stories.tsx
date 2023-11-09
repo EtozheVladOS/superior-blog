@@ -15,7 +15,7 @@ const Template: ComponentStory<typeof Select> = (args) => (
   />
 );
 
-const mockOptions: SelectOption[] = [
+const mockOptions: SelectOption<string>[] = [
   {
     value: 'Test 1',
     name: 'Test 1',
