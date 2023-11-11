@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  gap: 12px;
+}
+
+.tabItem {
+  cursor: pointer;
+  transition: all 200ms;
+
+  &:hover {
+    transform: scale(1.01);
+    opacity: 0.8;
+  }
+}

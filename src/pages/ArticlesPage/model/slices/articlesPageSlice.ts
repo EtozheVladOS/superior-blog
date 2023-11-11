@@ -4,7 +4,12 @@ import {
   createSlice,
 } from '@reduxjs/toolkit';
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { Article, ArticleSortField, ArticleView } from '@/entities/Article';
+import {
+  Article,
+  ArticleSortField,
+  ArticleView,
+  ArticleType,
+} from '@/entities/Article';
 import { LOCALSTORAGE_ARTICLES_VIEW_KEY } from '@/shared/constants/localStorage';
 import { SortOrder } from '@/shared/types';
 import { ArticlePageSchema } from '../types/articlePageSchema';
@@ -32,6 +37,7 @@ const articlePageSlice = createSlice({
     order: 'asc',
     sort: ArticleSortField.CREATED_AT,
     serach: '',
+    type: ArticleType.ALL,
     _inited: false,
   }),
   reducers: {
@@ -58,6 +64,9 @@ const articlePageSlice = createSlice({
     setSearch: (state, action: PayloadAction<string>) => {
       state.serach = action.payload;
     },
+    setType: (state, action: PayloadAction<ArticleType>) => {
+      state.type = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -74,7 +83,7 @@ const articlePageSlice = createSlice({
         (state, action) => {
           state.error = undefined;
           state.isLoading = false;
-          state.hasMoreContent = action.payload?.length > 0;
+          state.hasMoreContent = action.payload?.length >= state.limit;
 
           if (action.meta.arg.replace) {
             articlesPageAdapter.setAll(state, action.payload);

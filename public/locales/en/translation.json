@@ -24,5 +24,10 @@
   "search": "Search",
   "sort-created-at": "creation date",
   "sort-title": "title",
-  "sort-views": "count of views"
+  "sort-views": "count of views",
+  "filter-ALL": "All",
+  "filter-IT": "IT",
+  "filter-SCIENCE": "Science",
+  "filter-MEDICINE": "Medicine",
+  "filter-GAMES": "Games"
 }

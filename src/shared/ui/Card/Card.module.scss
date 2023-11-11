@@ -1,9 +1,16 @@
 .card {
   padding: 16px 12px;
   border-radius: 8px;
-  background-color: var(--card-bg);
 
   & > :not(:last-child) {
     margin-bottom: 8px;
+  }
+
+  &.normal {
+    background-color: var(--card-bg);
+  }
+
+  &.outline {
+    border: 1px solid var(--primary-color);
   }
 }

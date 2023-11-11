@@ -24,5 +24,10 @@
   "search": "Поиск",
   "sort-created-at": "дате создания",
   "sort-title": "названию",
-  "sort-views": "количеству просмотров"
+  "sort-views": "количеству просмотров",
+  "filter-ALL": "Все",
+  "filter-IT": "ИТ",
+  "filter-SCIENCE": "Наука",
+  "filter-MEDICINE": "Медицина",
+  "filter-GAMES": "Игры"
 }

@@ -1,0 +1,9 @@
+.tabs {
+  height: 30px;
+
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

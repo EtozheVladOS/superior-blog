@@ -1,5 +1,5 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { ArticleSortField, ArticleView } from '@/entities/Article';
+import { ArticleSortField, ArticleView, ArticleType } from '@/entities/Article';
 import { SortOrder } from '@/shared/types';
 
 export const getArticlesPageView = (state: StateSchema) => (
@@ -18,6 +18,9 @@ export const getArticlesPageOrder = (
   state: StateSchema,
 ): SortOrder => state.articlesPage?.order || 'asc';
 export const getArticlesPageSearch = (state: StateSchema) => state.articlesPage?.serach || '';
+export const getArticlesPageType = (
+  state: StateSchema,
+) => state.articlesPage?.type || ArticleType.ALL;
 
 export const getArticlesPageHasMoreContent = (
   state: StateSchema,

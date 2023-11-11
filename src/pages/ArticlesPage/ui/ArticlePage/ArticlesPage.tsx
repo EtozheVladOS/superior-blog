@@ -1,6 +1,7 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { useSearchParams } from 'react-router-dom';
 
 import { PageWrapper } from '@/widgets/PageWrapper/PageWrapper';
 import { Text } from '@/shared/ui/Text/Text';
@@ -31,13 +32,14 @@ const reducersList: ReducersList = {
 const ArticlesPage = () => {
   const { t } = useTranslation('articles');
   const dispatch = useAppDispatch();
+  const [serachParams] = useSearchParams();
 
   const articles = useSelector(getArticles.selectAll);
   const view = useSelector(getArticlesPageView);
   const isLoading = useSelector(getIsArticlesPageLoading);
 
   useInitialEffect(() => {
-    dispatch(initArticlesPage());
+    dispatch(initArticlesPage(serachParams));
   });
 
   const onLoadNextArticlePage = useCallback(() => {
