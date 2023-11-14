@@ -17,3 +17,19 @@ body {
 .content-page {
   display: flex;
 }
+
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--card-bg);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  /* stylelint-disable-next-line comment-empty-line-before */
+  /* border: 2px solid var(--primary-color);  отступ вокруг бегунка */
+}

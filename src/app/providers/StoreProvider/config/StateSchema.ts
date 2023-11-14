@@ -12,7 +12,7 @@ import { ScrollRestorationSchema } from '@/features/ScrollRestoration';
 import { LoginSchema } from '@/features/AuthByUsername';
 import { ProfileSchema } from '@/entities/Profile';
 import { ArticleDetailsSchema } from '@/entities/Article';
-import { ArticleDetailsCommentsSchema } from '@/pages/ArticleDetailsPage';
+import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from '@/features/AddCommentForm';
 import { ArticlePageSchema } from '@/pages/ArticlesPage';
 
@@ -25,9 +25,9 @@ export interface StateSchema {
   loginForm?: LoginSchema;
   profile?: ProfileSchema,
   articleDeatils?: ArticleDetailsSchema;
-  articleDetaildComments?: ArticleDetailsCommentsSchema;
   addCommentForm?: AddCommentFormSchema;
   articlesPage?: ArticlePageSchema;
+  articleDetailsPage?: ArticleDetailsPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
