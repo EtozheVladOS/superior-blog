@@ -8,12 +8,16 @@
   box-shadow: 0 0 20px var(--overlay-color);
 }
 
+.appTitle {
+  width: var(--sidebar-width);
+}
+
 .links {
   margin-left: auto;
 
   & > * {
     &:not(:last-child) {
-      margin-right: 12px;
+      margin-right: 24px;
     }
   }
 }

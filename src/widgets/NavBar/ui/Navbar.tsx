@@ -6,7 +6,11 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { Button, THEME_BTN } from '@/shared/ui/Button/ui/Button';
 import { LoginModal } from '@/features/AuthByUsername';
 import { getUserAuthData, userActions } from '@/entities/User';
-import styles from './Navbar.module.scss';
+import { TEXT_THEMES, Text } from '@/shared/ui/Text/Text';
+import { AppLink } from '@/shared/ui/AppLink';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { APP_LINK_THEME } from '@/shared/ui/AppLink/ui/AppLink';
+import cl from './Navbar.module.scss';
 
 interface NavbarProps {
   className?: string;
@@ -28,8 +32,18 @@ export const Navbar = ({ className }: NavbarProps) => {
 
   if (authData) {
     return (
-      <header className={classNames(styles.navbar, {}, [className])}>
-        <div className={styles.links}>
+      <header className={classNames(cl.navbar, {}, [className])}>
+        <Text
+          title="Superior App"
+          theme={TEXT_THEMES.INVERTED}
+          className={cl.appTitle}
+        />
+
+        <div className={cl.links}>
+          <AppLink to={RoutePath.article_create} theme={APP_LINK_THEME.INVERTED}>
+            {t('create-articel')}
+          </AppLink>
+
           <Button
             theme={THEME_BTN.CLEAR_INVERTED}
             onClick={onLogout}
@@ -42,8 +56,14 @@ export const Navbar = ({ className }: NavbarProps) => {
   }
 
   return (
-    <header className={classNames(styles.navbar, {}, [className])}>
-      <div className={styles.links} />
+    <header className={classNames(cl.navbar, {}, [className])}>
+      <Text
+        title="Superior App"
+        theme={TEXT_THEMES.INVERTED}
+        className={cl.appTitle}
+      />
+
+      <div className={cl.links} />
       <Button
         theme={THEME_BTN.CLEAR_INVERTED}
         onClick={toggleModalVisibility}

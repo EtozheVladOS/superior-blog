@@ -4,6 +4,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 
 export enum TEXT_THEMES {
   PRIMARY = 'primary',
+  INVERTED = 'inverted',
   ERROR = 'error',
 }
 
@@ -26,6 +27,7 @@ export const Text = memo(({
 }: TextProps) => {
   const clsMods = {
     [styles.error]: theme === TEXT_THEMES.ERROR,
+    [styles.inverted]: theme === TEXT_THEMES.INVERTED,
   };
 
   return (
