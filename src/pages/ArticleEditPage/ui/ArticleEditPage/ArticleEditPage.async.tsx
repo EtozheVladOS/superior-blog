@@ -1,5 +1,3 @@
 import { FC, lazy } from 'react';
 
-export const ArticleEditPageAsync = lazy<FC>(() => new Promise((resolve) => {
-  setTimeout(() => resolve(import('./ArticleEditPage')), 500);
-}));
+export const ArticleEditPageAsync = lazy<FC>(() => import('./ArticleEditPage'));
