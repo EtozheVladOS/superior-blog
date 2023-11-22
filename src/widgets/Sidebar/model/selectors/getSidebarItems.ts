@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { getUserAuthData } from '@/entities/User';
+import { getUserAuthData } from '@/entities/User/index';
 import { TransaltionNames } from '@/shared/constants/translationNames';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import HomeIcon from '@/shared/assets/icons/home.svg';

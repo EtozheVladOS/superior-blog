@@ -10,7 +10,7 @@ import {
   updateProfileData,
 } from '@/entities/Profile';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { getUserAuthData } from '@/entities/User';
+import { getUserAuthData } from '@/entities/User/index';
 import styles from './ProfilePageHeader.module.scss';
 
 export const ProfilePageHeader = memo(() => {

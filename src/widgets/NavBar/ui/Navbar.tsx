@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, THEME_BTN } from '@/shared/ui/Button/ui/Button';
 import { LoginModal } from '@/features/AuthByUsername';
-import { getUserAuthData, userActions } from '@/entities/User';
+import { getUserAuthData, userActions } from '@/entities/User/index';
 import { TEXT_THEMES, Text } from '@/shared/ui/Text/Text';
 import { AppLink } from '@/shared/ui/AppLink';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';

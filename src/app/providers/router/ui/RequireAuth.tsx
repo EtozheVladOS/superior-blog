@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { getUserAuthData } from '@/entities/User';
+import { getUserAuthData } from '@/entities/User/index';
 
 export const RequireAuth = ({ children }: PropsWithChildren<{}>) => {
   const isAuth = useSelector(getUserAuthData);
