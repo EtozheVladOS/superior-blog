@@ -1,5 +1,5 @@
 export { getUserStateInited } from './model/selectors/getUserStateInited/getUserStateInited';
-export * from './model/selectors/getUserAuthData/getUserAuthData';
+export { getUserAuthData } from './model/selectors/getUserAuthData/getUserAuthData';
 
 export { userActions, userReducer } from './model/slice/userSlice';
 
