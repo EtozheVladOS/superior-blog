@@ -25,6 +25,8 @@ interface PageWrapperProps {
   className?: string;
 }
 
+export const PAGE_WRAPPER_ID = 'page-wrapper-id';
+
 export const PageWrapper = memo(({
   children,
   shouldRestoreScroll,
@@ -67,6 +69,7 @@ export const PageWrapper = memo(({
       ref={wrapperRef}
       onScroll={onScroll}
       className={classNames(cl.wrapper, {}, [className])}
+      id={PAGE_WRAPPER_ID}
     >
       {children}
       {shouldRestoreScroll && <div ref={triggerRef} className={cl.trigger} />}
