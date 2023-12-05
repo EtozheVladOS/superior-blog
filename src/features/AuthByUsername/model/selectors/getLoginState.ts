@@ -1,5 +1,5 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { LoginSchema } from '@/features/AuthByUsername/model/types/loginSchema';
+import { LoginSchema } from '../types/loginSchema';
 
 const LOGIN_FORM_INIT_STATE: LoginSchema = {
   username: '',

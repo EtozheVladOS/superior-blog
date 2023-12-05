@@ -1,7 +1,7 @@
-import { VALIDATE_PROFILE_ERROR } from '@/entities/Profile/model/types/profile';
 import { COUNTRY } from '@/entities/Country';
 import { CURRENCY } from '@/entities/Currency';
 import { validateProfileData } from './validateProfileData';
+import { VALIDATE_PROFILE_ERROR } from '../../types/profile';
 
 const mockProfileData = {
   username: 'Testusername',

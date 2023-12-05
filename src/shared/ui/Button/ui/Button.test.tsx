@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Button, THEME_BTN } from '@/shared/ui/Button/ui/Button';
+import { Button, THEME_BTN } from './Button';
 
 const text = 'test_text';
 

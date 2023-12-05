@@ -2,7 +2,7 @@ import { TestAsyncThunk } from '@/shared/lib/unitTest/TestAsyncThunk';
 import { COUNTRY } from '@/entities/Country';
 import { CURRENCY } from '@/entities/Currency';
 import { updateProfileData } from './updateProfileData';
-import { VALIDATE_PROFILE_ERROR } from '@/entities/Profile/model/types/profile';
+import { VALIDATE_PROFILE_ERROR } from '../../types/profile';
 
 const mockProfileData = {
   id: '1',

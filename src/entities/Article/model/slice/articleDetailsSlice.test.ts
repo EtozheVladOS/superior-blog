@@ -1,6 +1,6 @@
-import { fetchArticleById } from '@/entities/Article/model/services/fetchArticleById/fetchArticleById';
-import { ArticleDetailsSchema } from '@/entities/Article/model/types/ArticleDetailsSchema';
-import { Article, ArticleBlockType, ArticleType } from '@/entities/Article/model/types/article';
+import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
+import { ArticleDetailsSchema } from '../types/ArticleDetailsSchema';
+import { Article, ArticleBlockType, ArticleType } from '../types/article';
 import { articleDeatilsReducer } from './articleDetailsSlice';
 
 const mockArticleData: Article = {

@@ -9,7 +9,7 @@ import {
 } from 'react';
 import styles from './Modal.module.scss';
 import { ClassnamesMods, classNames } from '@/shared/lib/classNames/classNames';
-import { Portal } from '@/shared/ui/Portal/Portal';
+import { Portal } from '../../Portal/Portal';
 
 const CLOSING_DELAY = 150;
 

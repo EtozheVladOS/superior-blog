@@ -2,7 +2,7 @@ import { useMemo, useState, memo } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { ThemeSwitcher } from '@/widgets/ThemeSwitcher/ui/ThemeSwitcher';
+import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
 import { LangSwitcher } from '@/widgets/LangSwitcher';
 import ArrowIcon from '@/shared/assets/icons/arrow-double-right.svg';
 import { Button, THEME_BTN } from '@/shared/ui/Button/ui/Button';

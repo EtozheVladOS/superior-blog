@@ -1,8 +1,8 @@
-import { ProfileSchema, VALIDATE_PROFILE_ERROR } from '@/entities/Profile/model/types/profile';
 import { COUNTRY } from '@/entities/Country';
 import { CURRENCY } from '@/entities/Currency';
 import { profileActions, profileReducer } from './profileSlice';
-import { updateProfileData } from '@/entities/Profile/model/services/updateProfileData/updateProfileData';
+import { ProfileSchema, VALIDATE_PROFILE_ERROR } from '../types/profile';
+import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 
 const mockProfileData = {
   id: '1',

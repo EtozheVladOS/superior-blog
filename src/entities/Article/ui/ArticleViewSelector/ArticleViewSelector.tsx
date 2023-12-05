@@ -1,10 +1,10 @@
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { ArticleView } from '@/entities/Article/model/types/article';
 import LinesIcon from '@/shared/assets/icons/lines.svg';
 import TileIcon from '@/shared/assets/icons/tiles.svg';
 import { Button, THEME_BTN } from '@/shared/ui/Button/ui/Button';
 import { Icon } from '@/shared/ui/Icon/Icon';
+import { ArticleView } from '../../model/types/article';
 import cl from './ArticleViewSelector.module.scss';
 
 interface ArticleViewSelectorProps {
