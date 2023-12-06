@@ -9,6 +9,7 @@ import { Button, THEME_BTN } from '@/shared/ui/Button/ui/Button';
 import styles from './Sidebar.module.scss';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
+import { VStack, HStack } from '@/shared/ui/Stack';
 
 interface SidebarProps {
   className?: string;
@@ -37,14 +38,15 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         )
       }
     >
-      <div className={classNames(styles.linksItemList, {
-        [styles.collapsed]: collapsed,
-      })}
+      <VStack
+        className={classNames(styles.linksItemList, {
+          [styles.collapsed]: collapsed,
+        })}
       >
         {siderbarItemsToDisplay}
-      </div>
+      </VStack>
 
-      <div className={styles.switchers}>
+      <VStack align="center" justify="center" className={styles.switchers}>
         <div>
           <ThemeSwitcher />
           <LangSwitcher />
@@ -54,7 +56,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
           theme={THEME_BTN.CLEAR}
           data-testid="toggle-sidebar"
         >
-          <div className={classNames(
+          <HStack className={classNames(
             styles.arrowIcon,
             {
               [styles.collapsedIcon]: collapsed,
@@ -63,9 +65,9 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
           >
             <ArrowIcon />
             <span>{t('collapse')}</span>
-          </div>
+          </HStack>
         </Button>
-      </div>
+      </VStack>
     </menu>
   );
 });

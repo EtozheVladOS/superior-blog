@@ -12,9 +12,8 @@
 }
 
 .linksItemList {
-  display: flex;
-  flex-direction: column;
   padding: 8px 16px;
+  align-items: unset !important;
 
   & .collapsed {
     justify-content: space-around;
@@ -25,9 +24,6 @@
   width: 100%;
   position: absolute;
   bottom: 20px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 
   & div {
     display: flex;
@@ -40,8 +36,6 @@
 }
 
 .arrowIcon {
-  display: flex;
-  align-items: center;
   color: var(--inverted-primary-color);
   border-radius: 8px;
 

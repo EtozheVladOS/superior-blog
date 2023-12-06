@@ -12,6 +12,7 @@ import {
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from '@/entities/User/index';
 import styles from './ProfilePageHeader.module.scss';
+import { HStack } from '@/shared/ui/Stack';
 
 export const ProfilePageHeader = memo(() => {
   const { t } = useTranslation('profile');
@@ -36,7 +37,7 @@ export const ProfilePageHeader = memo(() => {
   }, [dispatch, profileData?.id]);
 
   return (
-    <div className={styles.header}>
+    <HStack justify="between" className={styles.header}>
       <Text title={t('profile.page')} />
       {canEdit && (
         <div>
@@ -45,17 +46,17 @@ export const ProfilePageHeader = memo(() => {
               {t('edit')}
             </Button>
           ) : (
-            <div className={styles.btnGroup}>
+            <HStack gap="12">
               <Button onClick={onSaveEditedForm} theme={THEME_BTN.OUTLINE}>
                 {t('save')}
               </Button>
               <Button onClick={onCancelEditBtnClick} theme={THEME_BTN.OUTLINE_WARN}>
                 {t('cancel')}
               </Button>
-            </div>
+            </HStack>
           )}
         </div>
       )}
-    </div>
+    </HStack>
   );
 });

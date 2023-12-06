@@ -10,6 +10,7 @@ import { Text } from '@/shared/ui/Text/Text';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Icon } from '@/shared/ui/Icon/Icon';
+import { HStack } from '@/shared/ui/Stack';
 
 import cl from './ArticleDetails.module.scss';
 import { articleDeatilsReducer } from '../../model/slice/articleDetailsSlice';
@@ -69,7 +70,7 @@ export const ArticleDetails = memo(({ id }: ArticleDetailsProps) => {
   if (isLoading) {
     articleContent = (
       <div className={cl.skeletons}>
-        <Skeleton className={cl.avarat} width={140} height={140} borderRadius="50%" />
+        <Skeleton className={cl.avatar} width={140} height={140} borderRadius="50%" />
         <Skeleton width="60%" height={32} />
         <Skeleton width="80%" height={24} />
         <Skeleton width="100%" height={200} />
@@ -84,7 +85,7 @@ export const ArticleDetails = memo(({ id }: ArticleDetailsProps) => {
   } else {
     articleContent = (
       <div>
-        {articleData?.img && <Avatar size={140} src={articleData?.img} className={cl.avarat} />}
+        {articleData?.img && <Avatar size={140} src={articleData?.img} className={cl.avatar} />}
 
         <Text
           title={articleData?.title}
@@ -92,14 +93,14 @@ export const ArticleDetails = memo(({ id }: ArticleDetailsProps) => {
           size="large"
         />
 
-        <div className={cl.articleInfo}>
+        <HStack gap="12">
           <Icon SvgIcon={CalendarSvg} />
           <Text text={articleData?.creationDate} />
-        </div>
-        <div className={cl.articleInfo}>
+        </HStack>
+        <HStack gap="12">
           <Icon SvgIcon={EyeSvg} />
           <Text text={String(articleData?.views ?? 0)} />
-        </div>
+        </HStack>
 
         {articleData?.blocks.map(renderBlock)}
       </div>

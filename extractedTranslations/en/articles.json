@@ -4,10 +4,12 @@
   },
   "back-to-list": "",
   "comments": "",
+  "edit-article": "",
   "error-loading": "",
   "no-articles-yet": "",
   "not": {
     "found": ""
   },
-  "read-more": "read-more"
+  "read-more": "read-more",
+  "recommendations": ""
 }

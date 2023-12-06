@@ -3,19 +3,13 @@
   width: 100%;
 }
 
-.avarat {
+.avatar {
   display: flex;
   margin: 0 auto;
 }
 
 .skeletons :not(:last-child) {
   margin-bottom: 12px;
-}
-
-.articleInfo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
 }
 
 .block:not(:last-child) {
