@@ -1,5 +1,5 @@
 import {
-  DetailedHTMLProps, HTMLAttributes, memo, ReactNode, useMemo,
+  HTMLAttributes, memo, ReactNode, useMemo,
 } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './Flex.module.scss';
