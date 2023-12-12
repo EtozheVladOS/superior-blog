@@ -1,6 +1,6 @@
 import { memo } from 'react';
-import styles from './Text.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import styles from './Text.module.scss';
 
 export enum TEXT_THEMES {
   PRIMARY = 'primary',
@@ -8,14 +8,24 @@ export enum TEXT_THEMES {
   ERROR = 'error',
 }
 
+type TextSize = 'small' | 'middle' | 'large';
+
 interface TextProps {
   className?: string;
   title?: string;
   text?: string;
   theme?: TEXT_THEMES,
   textAlign?: 'right' | 'left' | 'center',
-  size?: 'small' | 'middle' | 'large',
+  size?: TextSize,
 }
+
+type HeaderTag = 'h1' | 'h2' | 'h3';
+
+const mapSizeToHeader: Record<TextSize, HeaderTag> = {
+  small: 'h3',
+  middle: 'h2',
+  large: 'h1',
+};
 
 export const Text = memo(({
   className,
@@ -29,6 +39,8 @@ export const Text = memo(({
     [styles.error]: theme === TEXT_THEMES.ERROR,
     [styles.inverted]: theme === TEXT_THEMES.INVERTED,
   };
+
+  const HeaderTag = mapSizeToHeader[size];
 
   return (
     <div
@@ -44,7 +56,7 @@ export const Text = memo(({
         )
       }
     >
-      {title && <p className={styles.title}>{title}</p>}
+      {title && <HeaderTag className={styles.title}>{title}</HeaderTag>}
       {text && <p className={styles.text}>{text}</p>}
     </div>
   );
