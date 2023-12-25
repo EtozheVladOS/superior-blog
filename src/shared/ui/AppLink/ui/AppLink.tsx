@@ -8,8 +8,6 @@ export enum APP_LINK_THEME {
   'INVERTED' = 'inverted',
 }
 
-console.log('TEST COMMIT_1');
-
 interface AppLinkProps extends LinkProps {
   className?: string;
   theme?: APP_LINK_THEME;
