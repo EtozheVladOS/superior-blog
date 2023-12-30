@@ -1,8 +1,8 @@
-@import "reset";
-@import "variables/global";
-@import "themes/light";
-@import "themes/dark";
-@import "themes/azure";
+@import url("./reset.scss");
+@import url("./variables/global.scss");
+@import url("./themes/light.scss");
+@import url("./themes/dark.scss");
+@import url("./themes/azure.scss");
 
 body {
   font: var(--font-m);

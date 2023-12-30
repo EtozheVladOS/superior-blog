@@ -1,7 +1,7 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { Button, THEME_BTN } from '@/shared/ui/Button/ui/Button';
+import { Button, THEME_BTN } from '@/shared/ui/Button';
 import { Text } from '@/shared/ui/Text/Text';
 import {
   getProfileData,

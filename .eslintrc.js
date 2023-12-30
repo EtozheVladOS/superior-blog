@@ -54,6 +54,8 @@ module.exports = {
           'direction',
           'gap',
           'role',
+          'as',
+          'dropdowmDirection',
         ],
       },
     ],

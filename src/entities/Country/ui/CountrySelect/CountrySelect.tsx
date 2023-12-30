@@ -2,10 +2,15 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { makeSelectOptionsFromObj }
   from '@/shared/utils/makeSelectOptionsFromObj/makeSelectOptionsFromObj';
+import { SelectProps } from '@/shared/ui/Select/Select';
+import {
+  makeListboxItemsFromObj,
+} from '@/shared/utils/makeListboxItemsFromObj/makeListboxItemsFromObj';
+import { ListBox } from '@/shared/ui/ListBox/ListBox';
 import { COUNTRY } from '../../model/types/country';
-import { Select, SelectProps } from '@/shared/ui/Select/Select';
 
 export const countryOptions = makeSelectOptionsFromObj(COUNTRY);
+export const countryListboxItems = makeListboxItemsFromObj(COUNTRY);
 
 type CountrySelectProps = Omit<SelectProps<COUNTRY>, 'value' | 'onChange'> & {
   value?: COUNTRY;
@@ -27,12 +32,22 @@ export const CountrySelect = memo(({
   const labeltoDisplay = label || t('countrySelect');
 
   return (
-    <Select
+    <ListBox
       {...otherProps}
       value={value}
       onChange={onCountryChange}
-      options={countryOptions}
+      items={countryListboxItems}
       label={labeltoDisplay}
     />
   );
+
+  // return (
+  //   <Select
+  //     {...otherProps}
+  //     value={value}
+  //     onChange={onCountryChange}
+  //     options={countryOptions}
+  //     label={labeltoDisplay}
+  //   />
+  // );
 });

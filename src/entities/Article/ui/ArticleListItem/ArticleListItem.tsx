@@ -8,7 +8,7 @@ import { Text } from '@/shared/ui/Text/Text';
 import { Icon } from '@/shared/ui/Icon/Icon';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Card } from '@/shared/ui/Card/Card';
-import { Button, THEME_BTN } from '@/shared/ui/Button/ui/Button';
+import { Button, THEME_BTN } from '@/shared/ui/Button';
 
 import cl from './ArticleListItem.module.scss';
 import {

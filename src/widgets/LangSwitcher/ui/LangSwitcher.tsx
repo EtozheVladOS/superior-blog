@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import LangiageIcon from '@/shared/assets/icons/language.svg';
-import { Button, THEME_BTN } from '@/shared/ui/Button/ui/Button';
+import { Button, THEME_BTN } from '@/shared/ui/Button';
 import styles from './LangSwitcher.module.scss';
 
 interface LangSwitcherProps {

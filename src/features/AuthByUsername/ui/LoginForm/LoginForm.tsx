@@ -4,7 +4,7 @@ import { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { DynamicReducerLoader, ReducersList } from '@/shared/lib/components/DynamicReducerLoader';
-import { Button } from '@/shared/ui/Button/ui/Button';
+import { Button } from '@/shared/ui/Button';
 import { ConsoleInput } from '@/shared/ui/ConsoleInput';
 import { Text, TEXT_THEMES } from '@/shared/ui/Text/Text';
 import styles from './LoginForm.module.scss';

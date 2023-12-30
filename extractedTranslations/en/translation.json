@@ -103,6 +103,7 @@
   },
   "save": "save",
   "search": "search",
+  "select-value": "select-value",
   "send": "send",
   "something": {
     "went": {
