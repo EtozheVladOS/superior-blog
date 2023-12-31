@@ -10,6 +10,9 @@ import { TEXT_THEMES, Text } from '@/shared/ui/Text/Text';
 import { AppLink } from '@/shared/ui/AppLink';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { APP_LINK_THEME } from '@/shared/ui/AppLink/ui/AppLink';
+import { Dropdown } from '@/shared/ui/Dropdown/Dropdown';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { HStack } from '@/shared/ui/Stack';
 import cl from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -39,18 +42,27 @@ export const Navbar = ({ className }: NavbarProps) => {
           className={cl.appTitle}
         />
 
-        <div className={cl.links}>
+        <HStack align="center" className={cl.links}>
           <AppLink to={RoutePath.article_create} theme={APP_LINK_THEME.INVERTED}>
             {t('create-articel')}
           </AppLink>
 
-          <Button
-            theme={THEME_BTN.CLEAR_INVERTED}
-            onClick={onLogout}
-          >
-            {t('logout')}
-          </Button>
-        </div>
+          <Dropdown
+            trigger={<Avatar size={40} src={authData.avatar} />}
+            items={[
+              {
+                contnent: t('my-profile'),
+                href: RoutePath.profile + authData.id,
+              },
+              {
+                contnent: t('logout'),
+                onClick: onLogout,
+              },
+            ]}
+            dropdowmDirection="bottom-left"
+            className={cl.dropdown}
+          />
+        </HStack>
       </header>
     );
   }

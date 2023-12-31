@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Listbox as HeadlessListbox } from '@headlessui/react';
 import TickIcon from '@/shared/assets/icons/tick.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { DropdowmDirection } from '@/shared/types/ui';
 import { HStack } from '../Stack';
 import { Button, THEME_BTN } from '../Button';
 import cl from './ListBox.module.scss';
@@ -13,11 +14,11 @@ export interface ListBoxItem {
   disabled?: boolean;
 }
 
-type DropdowmDirection = 'top' | 'bottom';
-
 const mapDropdowmDirection: Record<DropdowmDirection, string> = {
-  bottom: cl.bottom,
-  top: cl.top,
+  'top-right': cl.optionTopRight,
+  'top-left': cl.optionTopLeft,
+  'bottom-right': cl.optionBottomRight,
+  'bottom-left': cl.optionBottomLeft,
 };
 
 export interface ListBoxProps {
@@ -37,7 +38,7 @@ export const ListBox = ({
   value,
   placeholder,
   label,
-  dropdowmDirection = 'bottom',
+  dropdowmDirection = 'bottom-right',
   className,
   onChange,
 }: ListBoxProps) => {

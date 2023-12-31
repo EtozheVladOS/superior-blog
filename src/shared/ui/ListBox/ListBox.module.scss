@@ -16,9 +16,26 @@
   background-color: var(--list-box-bg);
   border-radius: 8px;
   box-shadow: 2px 2px 12px var(--list-box-bg);
+  width: max-content;
 
-  &.top {
+  &.optionTopRight {
     bottom: 100%;
+    left: 0;
+  }
+
+  &.optionTopLeft {
+    bottom: 100%;
+    right: 0;
+  }
+
+  &.optionBottomRight {
+    top: 100%;
+    left: 0;
+  }
+
+  &.optionBottomLeft {
+    top: 100%;
+    right: 0;
   }
 }
 

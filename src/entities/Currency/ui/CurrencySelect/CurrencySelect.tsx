@@ -38,7 +38,7 @@ export const CurrencySelect = memo(({
       onChange={onCurrencyChange}
       items={currencyListboxItems}
       label={labeltoDisplay}
-      dropdowmDirection="top"
+      dropdowmDirection="top-right"
     />
   );
 

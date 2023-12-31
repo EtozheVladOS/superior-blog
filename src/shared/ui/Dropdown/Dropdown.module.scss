@@ -1,0 +1,75 @@
+.container {
+  position: relative;
+}
+
+.trigger {
+  background: none;
+  outline: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 10000;
+  background: var(--list-box-bg);
+  border-radius: 8px;
+  box-shadow: 2px 2px 12px var(--list-box-bg);
+  border: 1px solid var(--primary-color);
+  width: max-content;
+
+  &.optionTopRight {
+    bottom: 100%;
+    left: 0;
+  }
+
+  &.optionTopLeft {
+    bottom: 100%;
+    right: 0;
+  }
+
+  &.optionBottomRight {
+    top: 100%;
+    left: 0;
+  }
+
+  &.optionBottomLeft {
+    top: 100%;
+    right: 0;
+  }
+}
+
+.menuItem {
+  background: none;
+  border: none;
+  outline: none;
+
+  &:first-child {
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+
+  &:last-child {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+
+  .activeItem {
+    background: var(--inverted-primary-color);
+  }
+}
+
+.menuBtn {
+  padding: 4px 12px;
+  width: 100%;
+  border: none;
+  background: none;
+  outline: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  border-radius: inherit;
+}
