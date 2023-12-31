@@ -1,4 +1,4 @@
-import { Fragment, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { Menu } from '@headlessui/react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropdowmDirection } from '@/shared/types/ui';
