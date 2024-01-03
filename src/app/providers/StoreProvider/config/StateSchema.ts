@@ -10,16 +10,18 @@ import { CounterSchema } from '@/entities/Counter';
 import { UserSchema } from '@/entities/User';
 import { ScrollRestorationSchema } from '@/features/ScrollRestoration';
 import { LoginSchema } from '@/features/AuthByUsername';
-import { ProfileSchema } from '@/entities/Profile';
+import { ProfileSchema } from '@/features/EditableProfileCard';
 import { ArticleDetailsSchema } from '@/entities/Article';
 import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from '@/features/AddCommentForm';
 import { ArticlePageSchema } from '@/pages/ArticlesPage';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
   sctollRestoration: ScrollRestorationSchema;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>,
 
   // Async reducers
   loginForm?: LoginSchema;

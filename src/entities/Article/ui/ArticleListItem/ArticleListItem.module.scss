@@ -80,10 +80,10 @@
     }
   }
 
-  .articleTitle p {
+  .articleTitle h2 {
+    text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
   }
 }
 

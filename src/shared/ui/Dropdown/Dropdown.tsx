@@ -37,10 +37,15 @@ export const Dropdown = ({
       <Menu.Button className={cl.trigger}>{trigger}</Menu.Button>
 
       <Menu.Items className={classNames(cl.menu, {}, [mapDropdowmDirection[dropdowmDirection]])}>
-        {items.map((item) => {
+        {items.map((item, idx) => {
           if (item.href) {
             return (
-              <Menu.Item as={AppLink} to={item.href} className={cl.menuItem}>
+              <Menu.Item
+                as={AppLink}
+                to={item.href}
+                className={cl.menuItem}
+                key={item.href}
+              >
                 {({ active }) => (
                   <button
                     onClick={item.onClick}
@@ -55,8 +60,10 @@ export const Dropdown = ({
             );
           }
 
+          const key = typeof item.contnent === 'string' ? item.contnent : idx;
+
           return (
-            <Menu.Item as="div" className={cl.menuItem}>
+            <Menu.Item as="div" className={cl.menuItem} key={key}>
               {({ active }) => (
                 <button
                   onClick={item.onClick}

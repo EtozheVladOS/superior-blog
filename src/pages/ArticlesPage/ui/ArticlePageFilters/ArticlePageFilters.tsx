@@ -53,21 +53,25 @@ export const ArticlePageFilters = memo(({ className }: ArticlePageFiltersProps) 
     dispatch(articlesPageActions.setPage(1));
     fetchArticlesData();
   }, [dispatch, fetchArticlesData]);
+
   const onChangeOrder = useCallback((order: SortOrder) => {
     dispatch(articlesPageActions.setOrder(order));
     dispatch(articlesPageActions.setPage(1));
     fetchArticlesData();
   }, [dispatch, fetchArticlesData]);
+
   const onChangeType = useCallback((type: ArticleType) => {
     dispatch(articlesPageActions.setType(type));
     dispatch(articlesPageActions.setPage(1));
     fetchArticlesData();
   }, [dispatch, fetchArticlesData]);
+
   const onChangeSearch = useCallback((search: string) => {
     dispatch(articlesPageActions.setSearch(search));
     dispatch(articlesPageActions.setPage(1));
     debounceFetchArticleData();
   }, [dispatch, debounceFetchArticleData]);
+
   const onViewClick = useCallback((view: ArticleView) => {
     dispatch(articlesPageActions.setView(view));
   }, [dispatch]);

@@ -1,7 +1,7 @@
 import { COUNTRY } from '@/entities/Country';
 import { CURRENCY } from '@/entities/Currency';
 import { profileActions, profileReducer } from './profileSlice';
-import { ProfileSchema, VALIDATE_PROFILE_ERROR } from '../types/profile';
+import { ProfileSchema, VALIDATE_PROFILE_ERROR } from '../types/EditableProfileCardSchema';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 
 const mockProfileData = {

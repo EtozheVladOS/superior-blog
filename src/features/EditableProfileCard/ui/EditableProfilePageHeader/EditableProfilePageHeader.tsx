@@ -1,23 +1,29 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { Button, THEME_BTN } from '@/shared/ui/Button';
-import { Text } from '@/shared/ui/Text/Text';
-import {
-  getProfileData,
-  getProfileReadonly,
-  profileActions,
-  updateProfileData,
-} from '@/entities/Profile';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { getUserAuthData } from '@/entities/User/index';
-import styles from './ProfilePageHeader.module.scss';
-import { HStack } from '@/shared/ui/Stack';
 
-export const ProfilePageHeader = memo(() => {
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { HStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text/Text';
+import { Button, THEME_BTN } from '@/shared/ui/Button';
+import { getUserAuthData } from '@/entities/User';
+
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
+import { profileActions } from '../../model/slice/profileSlice';
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
+import cl from './EditableProfilePageHeader.module.scss';
+import { classNames } from '@/shared/lib/classNames/classNames';
+
+interface EditableProfilePageHeaderProps {
+  className?: string;
+}
+
+export const EditableProfilePageHeader = memo(({ className }: EditableProfilePageHeaderProps) => {
   const { t } = useTranslation('profile');
 
   const dispatch = useAppDispatch();
+
   const readonly = useSelector(getProfileReadonly);
   const authData = useSelector(getUserAuthData);
   const profileData = useSelector(getProfileData);
@@ -35,9 +41,8 @@ export const ProfilePageHeader = memo(() => {
       dispatch(updateProfileData());
     }
   }, [dispatch, profileData?.id]);
-
   return (
-    <HStack justify="between" className={styles.header}>
+    <HStack justify="between" className={classNames(cl.header, {}, [className])}>
       <Text title={t('profile.page')} />
       {canEdit && (
         <div>

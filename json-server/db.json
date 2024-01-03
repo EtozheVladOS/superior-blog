@@ -6,9 +6,9 @@
       "firstname": "Sasha",
       "lastname": "Sergeev",
       "age": 33,
-      "country": "Iceland",
+      "country": "Kazakhstan",
       "city": "Moscow",
-      "currency": "RUB",
+      "currency": "EUR",
       "avatar": "https://avatars.dzeninfra.ru/get-zen_doc/3614701/pub_5ef7588786b0d9404c6ad81a_5ef759c509ec63125b322f98/scale_1200"
     },
     {
@@ -631,6 +631,12 @@
       "userId": "1",
       "text": "test comm 23",
       "id": "QqSaul0"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "test 2222",
+      "id": "T1KpKf-"
     }
   ]
 }

@@ -21,25 +21,17 @@ module.exports = async (layer, sliceName) => {
       const componentName = firstCharUppercase(sliceName);
       const layerName = firstCharUppercase(layer);
 
-      console.log(1);
-
       await fs.mkdir(resolveUiPath(componentName));
-
-      console.log(2);
 
       await fs.writeFile(
         resolveUiPath(componentName, `${componentName}.tsx`),
         componentTemplate(componentName),
       );
 
-      console.log(3);
-
       await fs.writeFile(
         resolveUiPath(componentName, `${componentName}.module.scss`),
         styleTemplate(componentName),
       );
-
-      console.log(4);
 
       await fs.writeFile(
         resolveUiPath(componentName, `${componentName}.stories.tsx`),

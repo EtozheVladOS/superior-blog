@@ -48,7 +48,7 @@ export const ArticleListItem = memo(({
       .find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock | undefined;
 
     return (
-      <div className={classNames(cl.articlelistitem, {}, [className, cl[view]])}>
+      <div className={classNames('', {}, [className, cl[view]])}>
         <Card className={cl.card}>
           <div className={cl.header}>
             <Avatar size={60} src={article.user.avatar} />
@@ -84,7 +84,7 @@ export const ArticleListItem = memo(({
     <AppLink
       to={`${RoutePath.article_details}${article.id}`}
       target={target}
-      className={classNames(cl.articlelistitem, {}, [className, cl[view]])}
+      className={classNames('', {}, [className, cl[view]])}
     >
       <Card className={cl.card}>
         <div className={cl.imgWrapper}>
