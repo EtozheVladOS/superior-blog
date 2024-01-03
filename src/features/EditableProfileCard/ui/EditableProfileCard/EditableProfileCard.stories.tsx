@@ -11,9 +11,13 @@ export default {
 
 const Template: ComponentStory<typeof EditableProfileCard> = (args) => <EditableProfileCard {...args} />;
 
-const storeDecorator = StoreDecorator({});
+const storeDecorator = StoreDecorator({
+  profile: {
+  },
+});
 
 export const Light = Template.bind({});
+Light.decorators = [storeDecorator];
 
 export const Dark = Template.bind({});
-Dark.decorators = [ThemeDecorator(THEMES.DARK)];
+Dark.decorators = [storeDecorator, ThemeDecorator(THEMES.DARK)];
