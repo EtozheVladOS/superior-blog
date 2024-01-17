@@ -35,4 +35,15 @@ export default {
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
   ],
   setupFilesAfterEnv: ['<rootDir>config/jest/jest-setup.ts'],
+  reporters: [
+    'default',
+    [
+      'jest-html-reporters', {
+        publicPath: '<rootDir>/reports/unit',
+        filename: 'report.html',
+        openReport: true,
+        inlineSource: true,
+      },
+    ],
+  ],
 };
