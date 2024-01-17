@@ -27,7 +27,7 @@ export default {
   ],
   moduleNameMapper: {
     '@/(.*)(.svg)': '<rootDir>config/jest/jestEmptyComponent.tsx',
-    '\\.(jpg|jpeg|png)$': 'identity-obj-proxy',
+    '\\.(jpg|jpeg|png)$': '<rootDir>config/jest/styleMock.js',
     '\\.s?css$': 'identity-obj-proxy',
     '@/(.*)': '<rootDir>src/$1',
   },
@@ -41,7 +41,7 @@ export default {
       'jest-html-reporters', {
         publicPath: '<rootDir>/reports/unit',
         filename: 'report.html',
-        openReport: true,
+        openReport: false,
         inlineSource: true,
       },
     ],

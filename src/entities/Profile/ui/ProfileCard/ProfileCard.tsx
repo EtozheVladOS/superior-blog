@@ -78,6 +78,7 @@ export const ProfileCard = ({
           placeholder={getTextWithGrearetTnanSymbol(t('input.username'))}
           wrapperClassName={styles.input}
           disabled={readonly}
+          data-testid="ProfileCard.username"
         />
         <ConsoleInput
           value={data?.firstname}
@@ -85,6 +86,7 @@ export const ProfileCard = ({
           placeholder={getTextWithGrearetTnanSymbol(t('input.firstname'))}
           wrapperClassName={styles.input}
           disabled={readonly}
+          data-testid="ProfileCard.firstname"
         />
         <ConsoleInput
           value={data?.lastname}
@@ -92,6 +94,7 @@ export const ProfileCard = ({
           placeholder={getTextWithGrearetTnanSymbol(t('input.lastname'))}
           wrapperClassName={styles.input}
           disabled={readonly}
+          data-testid="ProfileCard.lastname"
         />
         <ConsoleInput
           value={String(data?.age)}
@@ -99,6 +102,7 @@ export const ProfileCard = ({
           placeholder={getTextWithGrearetTnanSymbol(t('input.age'))}
           wrapperClassName={styles.input}
           disabled={readonly}
+          data-testid="ProfileCard.age"
         />
         <CountrySelect
           value={data?.country}
@@ -106,6 +110,7 @@ export const ProfileCard = ({
           label={getTextWithGrearetTnanSymbol(t('input.country'))}
           className={styles.input}
           disabled={readonly}
+          data-testid="ProfileCard.country"
         />
         <ConsoleInput
           value={data?.city}
@@ -113,6 +118,7 @@ export const ProfileCard = ({
           placeholder={getTextWithGrearetTnanSymbol(t('input.city'))}
           wrapperClassName={styles.input}
           disabled={readonly}
+          data-testid="ProfileCard.city"
         />
         <CurrencySelect
           value={data?.currency}
@@ -120,6 +126,7 @@ export const ProfileCard = ({
           label={getTextWithGrearetTnanSymbol(t('input.currency'))}
           className={styles.input}
           disabled={readonly}
+          data-testid="ProfileCard.currency"
         />
         <ConsoleInput
           value={data?.avatar}
@@ -127,6 +134,7 @@ export const ProfileCard = ({
           placeholder={getTextWithGrearetTnanSymbol(t('input.avatar'))}
           wrapperClassName={styles.input}
           disabled={readonly}
+          data-testid="ProfileCard.avatar"
         />
       </div>
     </div>

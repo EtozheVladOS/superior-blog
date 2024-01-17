@@ -7,12 +7,12 @@ export const validateProfileData = (profile?: Profile) => {
   }
 
   const {
-    firstname, lastname, age, country,
+    firstname, lastname, age, country, username,
   } = profile;
 
   const errorList: VALIDATE_PROFILE_ERROR[] = [];
 
-  if (!firstname?.trim() || !lastname?.trim()) {
+  if (!firstname?.trim() || !lastname?.trim() || !username?.trim()) {
     errorList.push(VALIDATE_PROFILE_ERROR.INCORECT_PROFILE_DATA);
   }
   if (!age) {
