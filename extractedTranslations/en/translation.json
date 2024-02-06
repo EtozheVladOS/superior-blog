@@ -13,6 +13,7 @@
   "about": {
     "page": "page"
   },
+  "admin-panel": "admin-panel",
   "article": {
     "": ""
   },
@@ -49,6 +50,7 @@
   "fail": "fail",
   "failFetch": "failFetch",
   "firstname": "firstname",
+  "has-no-access": "has-no-access",
   "input": {
     "age": "age",
     "avatar": "avatar",

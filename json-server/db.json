@@ -49,28 +49,44 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://avatars.dzeninfra.ru/get-zen_doc/3614701/pub_5ef7588786b0d9404c6ad81a_5ef759c509ec63125b322f98/scale_1200"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER",
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://cdn.vox-cdn.com/thumbor/VZNJM5S4Cw2i3JaycT9waVLCwqw=/715x248:1689x721/1200x800/filters:focal(972x299:1278x605)/cdn.vox-cdn.com/uploads/chorus_image/image/69305239/shrek4_disneyscreencaps.com_675.0.jpg"
     },
     {
       "id": "3",
       "username": "PRO_PROGGER",
       "password": "123",
-      "role": "USER",
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://image.spreadshirtmedia.net/image-server/v1/compositions/T6A1PA5835PT17X11Y94D166072447W28889H21656/views/1,width=550,height=550,appearanceId=1,backgroundColor=FFFFFF,noPt=true/meme-from-the-internet-relaxed-face-mens-t-shirt.jpg"
     },
     {
       "id": "4",
       "username": "undefined_user_js_pro_senior",
       "password": "123",
-      "role": "USER"
+      "roles": [
+        "USER"
+      ]
+    },
+    {
+      "id": "5",
+      "username": "manager",
+      "password": "123",
+      "roles": [
+        "MANAGER"
+      ]
     }
   ],
   "articles": [

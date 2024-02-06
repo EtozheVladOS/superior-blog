@@ -5,7 +5,12 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, THEME_BTN } from '@/shared/ui/Button';
 import { LoginModal } from '@/features/AuthByUsername';
-import { getUserAuthData, userActions } from '@/entities/User/index';
+import {
+  getUserAuthData,
+  isUserAdmin,
+  isUserManager,
+  userActions,
+} from '@/entities/User/index';
 import { TEXT_THEMES, Text } from '@/shared/ui/Text/Text';
 import { AppLink } from '@/shared/ui/AppLink';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
@@ -23,6 +28,8 @@ export const Navbar = ({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const authData = useSelector(getUserAuthData);
+  const isAdmin = useSelector(isUserAdmin);
+  const isManager = useSelector(isUserManager);
 
   const [authModalVisible, setAuthModalVisible] = useState(false);
 
@@ -32,6 +39,8 @@ export const Navbar = ({ className }: NavbarProps) => {
   const onLogout = useCallback(() => {
     dispatch(userActions.logout());
   }, [dispatch]);
+
+  const isAdminPanelEnable = isAdmin || isManager;
 
   if (authData) {
     return (
@@ -50,6 +59,10 @@ export const Navbar = ({ className }: NavbarProps) => {
           <Dropdown
             trigger={<Avatar size={40} src={authData.avatar} />}
             items={[
+              ...(isAdminPanelEnable ? [{
+                contnent: t('admin-panel'),
+                href: RoutePath.admin_panel,
+              }] : []),
               {
                 contnent: t('my-profile'),
                 href: RoutePath.profile + authData.id,

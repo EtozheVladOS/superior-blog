@@ -32,5 +32,7 @@
   "filter-GAMES": "Игры",
   "create-articel": "Создать статью",
   "select-value": "ВЫберете значение",
-  "my-profile": "Мой профиль"
+  "my-profile": "Мой профиль",
+  "admin-panel": "Панель админа",
+  "has-no-access": "У вас нет доступа к данной странице"
 }
